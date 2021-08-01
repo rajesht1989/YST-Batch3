@@ -1,0 +1,168 @@
+//Requirement:addition of three numbers and print the result
+
+#include <stdio.h>
+void main () {
+int firstno;
+int secondno;
+int thirdno;
+printf("addition of firstno ");
+scanf("%d",&firstno);
+printf("addition of secondno ");
+scanf ("%d",&secondno);
+printf("addition of thirdno ");
+scanf("%d",&thirdno);
+int result=firstno+secondno+thirdno;
+printf("%d",result);
+}
+
+
+
+
+
+//Requirement:subtraction of three numbers and print the result
+
+#include <stdio.h>
+void main () {
+int firstno;
+int secondno;
+int thirdno;
+printf("subtraction of firstno ");
+scanf("%d",&firstno);
+printf("subtraction of twono ");
+scanf("%d",&secondno);
+printf("subtraction of thirdno ");
+scanf("%d",&thirdno);
+int result=firstno-secondno-thirdno;
+printf("%d",result);
+}
+
+
+
+
+
+
+
+//Requirement:multiplication of three numbers and print the result
+
+#include <stdio.h>
+void main () {
+int firstno;
+int secondno;
+int thirdno;
+printf("multiplication of firstno ");
+scanf("%d",&firstno);
+printf("multiplication of twono ");
+scanf("%d",&secondno);
+printf("multiplication  of thirdno ");
+scanf("%d",&thirdno);
+int result=firstno*secondno*thirdno;
+printf("%d",result);
+}
+
+
+
+
+
+
+
+//Requirement:division of three numbers and print the result
+
+#include <stdio.h>
+void main () {
+int firstno;
+int secondno;
+int thirdno;
+printf("division of firstno ");
+scanf("%d",&firstno);
+printf("division of twono ");
+scanf("%d",&secondno);
+printf("division of thirdno ");
+scanf("%d",&thirdno);
+int result=firstno/secondno/thirdno;
+printf("%d",result);
+}
+
+
+
+
+
+*FLOAT*
+
+
+//Requirement:add three numbers and print the result
+
+#include <stdio.h>
+void main () {
+float firstno;
+float secondno;
+float thirdno;
+printf("addition of the firstno ");
+scanf("%f",&firstno);
+printf("addition of secondno ");
+scanf("%f",&secondno);
+printf("addition of the thirdno ");
+scanf("%f",&thirdno);
+float result=firstno+secondno+thirdno;
+printf("%f",result);
+}
+
+
+
+
+//Requirement:subtract three numbers and print the result
+
+#include <stdio.h>
+void main () {
+float firstno;
+float secondno;
+float thirdno;
+printf("subtraction of the firstno ");
+scanf("%f",&firstno);
+printf("subtraction of secondno ");
+scanf("%f",&secondno);
+printf("subtraction of the thirdno ");
+scanf("%f",&thirdno);
+float result=firstno-secondno-thirdno;
+printf("%f",result);
+}
+
+
+
+
+
+//Requirement:multiply three numbers and print the result
+
+#include <stdio.h>
+void main () {
+float firstno;
+float secondno;
+float thirdno;
+printf("multiplication of the firstno ");
+scanf("%f",&firstno);
+printf("multiplication of secondno ");
+scanf("%f",&secondno);
+printf("multiplication of the thirdno ");
+scanf("%f",&thirdno);
+float result=firstno*secondno*thirdno;
+printf("%f",result);
+}
+
+
+
+
+//Requirement:divide three numbers and print the result
+
+#include <stdio.h>
+void main () {
+float firstno;
+float secondno;
+float thirdno;
+printf("division of the firstno ");
+scanf("%f",&firstno);
+printf("division of secondno ");
+scanf("%f",&secondno);
+printf("division of the thirdno ");
+scanf("%f",&thirdno);
+float result=firstno/secondno/thirdno;
+printf("%f",result);
+}
