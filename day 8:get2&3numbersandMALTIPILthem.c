@@ -34,3 +34,23 @@ int main(){
     int result=maltipilTwoNumber(a,b);
     printf("MALTIPLYCATION VALUE IS %d",result);
 }
+
+//REQUIREMENT:GET 4 NUMBER FROM USER AND PRINT MALTIPIL VALUE
+int getNumberFromUser(){
+    int value;
+    printf("ENTER YOUR NUMBER ");                                           //GET 4 NUMBER FROM USER AND PRINT MALTIPIL VALUE
+    scanf("%d",&value);
+    return value;
+}
+int maltipilFourNumber(int first,int second,int third,int four){
+    return first*second*third*four;
+}
+#include<stdio.h>
+int main(){
+    int a=getNumberFromUser();
+    int b=getNumberFromUser();
+    int c=getNumberFromUser();
+    int d=getNumberFromUser();
+    int result=maltipilFourNumber(a,b,c,d);
+    printf("MALTIPIL VALUE IS %d",result);
+}
