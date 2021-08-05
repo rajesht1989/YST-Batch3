@@ -1,0 +1,20 @@
+//Requirement:get three numbers from the user and subtract them and print them on the console
+
+#include <stdio.h>
+void main () {
+int i=getnumberfromtheuser ();
+int j=getnumberfromtheuser ();
+int l=getnumberfromtheuser ();
+int k=subtract(i,j,l);
+printf("subtraction of number %d",k);
+}
+int getnumberfromtheuser () {
+printf ("enter a number ");
+int v;
+scanf ("%d",&v);
+return v;
+}
+int subtract (int firstno,int secondno,int thirdno)
+{
+return firstno-secondno-thirdno;   
+}
