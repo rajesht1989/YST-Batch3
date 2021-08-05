@@ -14,7 +14,7 @@ int main(){
     int b=getNumberFromUser();
     int c=getNumberFromUser();
     int result=divideThreeNumber(a,b,c);
-    printf("MALTIPLYCATION VALUE IS %d",result);
+    printf("DIVIDE VALUE IS %d",result);
 }
 
 
@@ -33,6 +33,6 @@ int main(){
     int a=getNumberFromUser();
     int b=getNumberFromUser();
     int result=divideTwoNumber(a,b);
-    printf("MALTIPLYCATION VALUE IS %d",result);
+    printf("DIVIDE VALUE IS %d",result);
 }
 
