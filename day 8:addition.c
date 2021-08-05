@@ -1,9 +1,9 @@
-//REQUIREMENT:GET TWO NUMBER FROM USER
+//REQUIREMENT:GET TWO NUMBER FROM USER AND PRINT ADD VALUE
 int getNumberFromUser(){
     int v;
     printf("Enter a Number ");
     scanf("%d",&v);
-    return v;                                                //GET TWO NUMBERS FROM USER
+    return v;                                                //GET TWO NUMBERS FROM USER AND PRINT ADD VALUE
 }
 int add(int a,int b){
     return a+b;
