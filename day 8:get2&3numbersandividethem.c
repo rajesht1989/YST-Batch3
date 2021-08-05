@@ -36,3 +36,22 @@ int main(){
     printf("DIVIDE VALUE IS %d",result);
 }
 
+//REQUIREMENT:GET 4 NUMBER FROM USER AND PRINT DIVIDE VALUE
+int getNumberFromUser(){
+    int value;
+    printf("ENTER YOUR NUMBER ");                                           //GET FOUR NUMBER FROM USER AND PRINT DIVIDE VALUE
+    scanf("%d",&value);
+    return value;
+}
+int divideFourNumber(int first,int second,int third,int four){
+    return first/second/third/four;
+}
+#include<stdio.h>
+int main(){
+    int a=getNumberFromUser();
+    int b=getNumberFromUser();
+    int c=getNumberFromUser();
+    int d=getNumberFromUser();
+    int result=divideFourNumber(a,b,c,d);
+    printf("ADD VALUE IS %d",result);
+}
