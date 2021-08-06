@@ -1,0 +1,50 @@
+Product management:
+
+*SignUp
+*Create a new meeting
+*Join with a code
+*Declare more options icons an top  life site
+*Alert message
+*Sound
+*More options
+*Setting
+
+=>signUp:
+      Get mail Id and password from user.
+
+=>Create a new meeting:
+      *Get a meeting like to share (To share link)
+      *Start an instant meeting
+      *Schedule in google calendar
+
+1. Get a meeting like to share:
+      => Meeting code automatically created
+      =>Share options
+2. Shart an instant meeting:
+      =>Meeting code link
+      =>Share options
+      =>Mic, video,call end options
+3. Schedule in google calendar
+      =>Click got it options to get calendar
+         *Used to make a schedule
+=>Join with a code
+      *Enter the code provided by the meeting organizer
+=>Declare more options icons top left side
+      *Setting
+      *Feedback
+      *Help
+=>Alert message
+     *Send alert message automatically to whatsapp
+     *send class started message to whatsapp group automatically
+=>Sound
+    *Speaker
+    *Phone
+    *Audio off
+    *Cancel
+=>More options
+    * Incall message
+    * Share screen
+    * Show captions
+=>Setting
+    *Edit option
+    *Language 
