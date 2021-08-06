@@ -1,4 +1,114 @@
-//REQUIREMENT:HELP LAND AGIENT FOR 21^ST CUNTURY
+//REQUIREMENT:HELP LAND AGENT AND LAND SELLER
 
-INTROTACTION:
-              *
+📖 INTRODUCTION:
+              ✔ Creat "Sing up" page
+              ✔ Reload and show "Login" page
+              ✔ Show "Home" page
+              ✔ Some "Button" insert
+              ✔ Setting make (Enter "customer Details")
+
+📖 SIGN UP PAGE:
+             ✔ A signup page (also known as a registration page) enables users 
+and organizations to independently register and gain access to your system. 
+It is common to have multiple signup pages depending on the types of people and 
+organizations you want to register.
+              ✔ Enter user name and Email address
+              ✔ Creat password
+              ✔ Go login page
+
+🎈EXAMPLE:
+          👓 https://www.tutorialrepublic.com/snippets/designs/simple-sign-up-form-with-blue-background.png
+
+
+📖 LOGIN PAGE:
+            ✔ A login page is a web page or an entry page to a website that requires user identification 
+and authentication, regularly performed by entering a username and password combination. Logins may provide 
+access to an entire site or part of a website.
+            ✔ Enter Email and Password
+            ✔ If not,you can login(Facebook,google & anyone account)
+            ✔ Starting App
+🎈EXAMPLE:
+          👓 https://colorlib.com/wp/wp-content/uploads/sites/2/login-form-v11.jpg
+
+
+📖 HOME PAGE:
+          ✔ APPBAR: "App Name",logo & some icons
+          ✔ Some icons:
+                        ⚾ Intvert
+                        ⚾ Drawer
+                        ⚾ Search box with mic
+                        ⚾ Show near popular place and location
+           ✔ TASKBAR:(button) 
+                        🏀 Home
+                        🏀 Find easy way(FEW)
+                        🏀 Updates
+                        🏀 Saved place(SP)
+                        🏀 Setting
+                        🏀 About us
+                        🏀 Floating Button(ADD)
+
+📖 BUTTON ACTION:
+              ⚽ Click "Home" button 🚌 open home page
+              ⚽ Click "FEW" button 🚌 finding way to user select place
+              ⚽ Click "Updates" button 🚌 daily update for user like place
+              ⚽ Click "SP" button 🚌 see user selected places
+              ⚽ Click "About us" see App detalis
+              ⚽ Click "ADD" button 🚌 add Photo,Video & document
+
+
+📖 SETTING BUTTON:
+    Click "Setting" 
+                  🤍 Upgrade to Prrmium,
+                  🤍 User details & Edite,
+                  🤍 Language,
+                  🤍 Online & Offline mode,
+                  🤍 Customar Support(Help),
+                  🤍 Theme,
+                  🤍 Privacy Password,
+                  🤍 QR Scanner,
+                  🤍 Notification,
+                  🤍 Loan,
+                  🤍 Bank Details,
+                  🤍 G pay & Anyone Net banking,
+                  🤍 Backup
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
