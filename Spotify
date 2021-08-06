@@ -1,3 +1,38 @@
 Requirement:
            To hear songs from Any laguages at any where on the world.
            To here songs with Online and Offline.
+           
+About Spotify:
+            Spotify is a legal way to stream music online and listen to podcasts. The company licenses tracks from major and minor record labels for its extensive music library. 
+            It pays the rights holders an undisclosed amount based on the number of times people listen to each track.
+ Listening to music on Spotify is entirely free, but you see banner ads within the official apps and hear the occasional audio ad between songs as a trade-off.
+ You can listen to entire albums on Spotify in addition to playlists curated by Spotify staff, artists, and other users. 
+ Likewise, you can create Spotify playlists and share them.
+If you want to remove ads, you can pay for Spotify Premium, a paid membership that removes all advertising from the apps, enables song downloading for offline listening, and more.
+
+Product Management:
+  
+Splash Screen:
+       Spotify logo       
+Get new user registration page:
+      Get first name
+      Get last name
+      Get password
+      Get confirm password
+      Click Login button
+Get log in page:
+       Get username
+       Get password
+       Click login button
+Home Screen:
+       Album of all genre is appear
+       Click any one album
+Get search bar:
+       Type what song do you want
+       Play that song
+       The song will appear on bottom play button
+Spotify play screen :
+       Click download arrow to save song for online
+       After , you can listen songs without internet
+Settings:
+       Click log out to get out from Spotify app 
