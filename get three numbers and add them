@@ -1,4 +1,4 @@
-//Requirement:get three numbers from the user and add them and print them on the console
+//Requirement:get two numbers from the user and add them and print them on the console
 
 #include <stdio.h>
 void main () {
