@@ -1,16 +1,41 @@
-Requirement:
-           To hear songs from Any laguages at any where on the world.
-           To here songs with Online and Offline.
-           
-About Spotify:
-            Spotify is a legal way to stream music online and listen to podcasts. The company licenses tracks from major and minor record labels for its extensive music library. 
-            It pays the rights holders an undisclosed amount based on the number of times people listen to each track.
- Listening to music on Spotify is entirely free, but you see banner ads within the official apps and hear the occasional audio ad between songs as a trade-off.
- You can listen to entire albums on Spotify in addition to playlists curated by Spotify staff, artists, and other users. 
- Likewise, you can create Spotify playlists and share them.
-If you want to remove ads, you can pay for Spotify Premium, a paid membership that removes all advertising from the apps, enables song downloading for offline listening, and more.
+Spotify
 
+Requirement:
+                      To hear songs with HIGH quality 
 Product Management:
+
+Advantage:
+       Spotify has millions of songs in all language of world
+       Spotify has very high quality of songs 
+       Spotify has user friendly playlists 
+       Spotify has AI(Artificial Intelligence) to detect the user fav songs and make playlists 
+       Spotify Has most podcast to entertain
+       Spotify has a car mode which is used to connect with android player in car
+       Spotify has offline mode which is used to save data and  used in there is no network signal in surrounding area
+
+DisAdvantage:
+       Spotify Has ads in trail version
+       Spotify premium is too high 
+       Most of the Tamil old songs are not available 
+       No song ratings
+
+Alternate App for Spotify:
+      1.Amazon Prime music
+           In amazon prime music there is no trail version we have to pay to hear songs.
+           So Compare with Spotify Spotify is best among Amazon prime music (In Spotify there is life time trail version with interlude ads).
+     2.Gaana :
+            In Gaana app there is trail app .But sound quality is not Statisfied.
+            It also has some ads.
+            But there is no podcast and  AI to detect User moods
+            So Compare with Spotify,Spotify is best among Gaana music 
+            (In Spotify there is millions of songs in all language of world, and sound quality is high ).
+    3.Wynk and Jio Saavan:
+             These apps are also music streaming platforms but this is app is dependent on network of the user for trail version.
+Wynk music is available for only AIRTEL user only.
+Jio Saavan is available for only JIO user only. So compare to Spotify,Spotify is independent on all network .
+So Spotify is best app to user
+
+
   
 Splash Screen:
        Spotify logo       
@@ -35,4 +60,4 @@ Spotify play screen :
        Click download arrow to save song for online
        After , you can listen songs without internet
 Settings:
-       Click log out to get out from Spotify app 
+       Click log out to get out from Spotify app    
