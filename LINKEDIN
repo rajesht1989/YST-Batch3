@@ -1,0 +1,78 @@
+//REQUIREMENT: APP USED FOR GETTING JOBS AND SHOWING OFF PROFFESIONAL SKILLS
+
+📖 SIGN UP PAGE:
+             ✔ A signup page enables users and organizations to independently register and gain access to your system.
+             It is common to have multiple signup pages depending on the types of people and organizations you want to register
+              ✔ Enter user name and Email address
+              ✔ Creat password
+              ✔ Go login page
+
+
+
+
+📖 LOGIN PAGE:
+            ✔ A login page is a web page or an entry page to a website that requires user identification 
+and authentication, regularly performed by entering a username and password combination. Logins may provide 
+access to an entire site or part of an website
+            ✔ Enter Email and Password
+            ✔ If not,you can login(Facebook,google & anyone account)
+            ✔ Starting App
+🎈EXAMPLE:
+          👓 https://colorlib.com/wp/wp-content/uploads/sites/2/login-form-v11.jpg
+
+
+📖 HOME PAGE: 
+             👉 [HOME PAGE LIKE GOOGLE MAP APPLICATION]
+          ✔ APPBAR: "App Name",logo & some icons
+          ✔ Some icons:
+                        ⚾ messages
+                        ⚾ stories
+                        ⚾ feed
+                        
+           ✔ TASKBAR:(button) 
+                        🏀 HOME
+                        🏀 MY NETWORK
+                        🏀 POST
+                        🏀 NOTIFICATION
+                        🏀 JOBS
+                        🏀 
+                        🏀 
+
+
+
+📖 BUTTON ACTION:
+               Click "home" button to see and learn about the works done by the proffesional workers and students
+               Click "My network" button to see the various developed channels that the particular person follows to see their 
+               proffesional skills
+               Click "Post" button to show your proffesional skills about your jobs
+               Click "Notification" button to follow proffesional peoples skills and follow their experience
+               Click "Jobs" button to search a job according to your proffesionalism
+               
+
+
+📖 SETTING BUTTON:
+    Click "Setting" 
+                  Account preferences
+                  sign in and security
+                  visibility
+                  communications
+                  data privacy
+                  advertising data
+                  help center
+                  privacy policy
+                  accesibility
+                  user agreement
+                  end user license agreement
+                  sign out
+
+
+
+ABOUT THE APPLICATION:
+                   job search made easy,with salary insights and buisness networking on LinkedIn
+                 Build your buisness network by connecting with other proffesionals.Use Linkedin to ask yourbbuisnss contacts for refferals,
+                        share posts and convers with fellow proffesionals to boost your odds of getting hired.
+                   
+                       
+                        
+ 
+                        THANK YOU FOR SPENDING YOUR TIME FOR THIS APPLICTION
