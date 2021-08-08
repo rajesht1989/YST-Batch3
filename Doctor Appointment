@@ -8,6 +8,19 @@ email
 Pass Word
 Confirm Pass Word
 LOGIN PAGE:
+
+Patient Side:
+Sign in
+Search & Doctors
+Book an Appointment
+Consult with Doctor
+
+Doctor side:
+Sign in
+Share to time slot
+Communicate with Patient
+Prescription
+
 MENU SCREEN:
 Select Hospital
 Select Doctors
@@ -15,8 +28,18 @@ Health Schedules
 Book On Appoitment
 Select Appoitment Date and Time
 Hospital Location
-PAYMENT OPTIONS:
-Bank a/c no
-cvv 
-Name of the Holder
-Payment sucessfully
+ Live Video conferencing
+ 
+ HOW TO DOCTOR APP MANAGEMENT SYSTEM AND MODULE:
+ > Hospital working and non working day and time etc
+ >Availablity & time and consulting combination
+ >Appointement booking multiple slot
+ >Appoint ment cancellation & re schedulling
+ 
+ADVANTAGES:
+Patient time save
+online booking fast payments
+
+DISADVANTAGES:
+ You need internet access
+ 
