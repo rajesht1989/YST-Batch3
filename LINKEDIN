@@ -1,5 +1,12 @@
 //REQUIREMENT: APP USED FOR GETTING JOBS AND SHOWING OFF PROFFESIONAL SKILLS
 
+📖 INTRODUCTION:
+              ✔ Creat "Sing up" page
+              ✔ Reload and show "Login" page
+              ✔ Show "Home" page
+              ✔ Some "Button" insert
+              ✔ Setting make (Enter "customer Details")
+
 🎈 SIGN UP PAGE:
               ✔Click App and enter sign up
               ✔ Creat password
@@ -32,7 +39,7 @@ access to an entire site or part of an website
                
 
 
-🎈 FLOATING BUTTON:
+🎈 SETTINGS BUTTON:
                 🧨 Account preferences
                 🧨 sign in and security
                 🧨 visibility
