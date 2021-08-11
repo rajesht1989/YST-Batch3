@@ -1,0 +1,31 @@
+#include <stdio.h>
+int main()
+{
+    int a,b,c;
+    printf(" Enter the first no = ");
+    scanf("%d", &a);
+    printf("\n Enter the second no = ");
+    scanf("%d", &b);
+    printf("\n Enter the third no = ");
+    scanf("%d", &c);
+    if (a > b)
+    {
+        if (a >c)
+        {
+            printf(" Largest number = %d ",a);
+        }
+        else
+        {
+            printf(" Largest number = %d",c);
+        }
+    }
+    else if (b >c)
+    {
+        printf(" Largest number = %d ",b);
+    }
+    else
+    {
+        printf(" Largest number = %d ",c);
+    }
+    return 0;
+}
