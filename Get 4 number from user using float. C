@@ -1,0 +1,31 @@
+// Get 4 Numbers from user and identify the smallest number and print on console
+#include <stdio.h>
+
+float getNumberFromUser() {
+    float value;
+    printf("Enter the Number ");
+    scanf("%f", &value);
+return value;
+}
+
+float smallestOf(float i, float j, float k, float l) {
+    if (j < i && k < i  && l < i) {
+        return i;
+} else {
+    if (j < k) {
+        return k;
+    } else {
+        return j;
+    }
+    if (k  < l){
+        return l;
+    } else {
+        return k;
+    }
+}
+}
+
+void main() {
+    float a = getNumberFromUser(), b = getNumberFromUser(), c = getNumberFromUser(),d= getNumberFromUser();
+    printf("Smallest is %f", smallestOf(a, b, c, d));
+}
