@@ -1,4 +1,3 @@
-//REQUIREMENT:GET 3 NUMBER FROM USER  AND IDENTIFY BIGGEST NUMBUR AND PRINT ON CONSOLE
 int getNumberFromUser(){
     int value;
     printf("Enter a Number ");
@@ -6,11 +5,16 @@ int getNumberFromUser(){
     return value;
 }
 int biggestValue(int a,int b,int c){
-    if(a>b){
+    if(a>b&&a>c){
         return a;
     }
     else {
-        return b;
+        if(b>c){
+            return b;
+        }
+        else{
+        return c;
+        }
     }
 }
 #include<stdio.h>
@@ -19,4 +23,5 @@ int main(){
     int b=getNumberFromUser();
     int c=getNumberFromUser();
     printf("Biggest value is %d",biggestValue(a,b,c));
+    return c;
 }
