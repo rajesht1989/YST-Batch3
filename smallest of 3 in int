@@ -1,0 +1,26 @@
+// Get 3 Number from user and identify the smallest number and print on console
+#include <stdio.h>
+
+int getNumberFromUser() {
+    int value;
+    printf("Enter the Number ");
+    scanf("%d", &value);
+return value;
+}
+
+int smallestOf(int i, int j, int k) {
+    if (j < i && k < i) {
+        return i;
+} else {
+    if (j < k) {
+        return k;
+    } else {
+        return j;
+    }
+}
+}
+
+void main() {
+    int a = getNumberFromUser(), b = getNumberFromUser(), c = getNumberFromUser();
+    printf("Smallest is %d",smallestOf(a, b, c));
+}
