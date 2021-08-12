@@ -1,0 +1,22 @@
+// Get 2 Number from user and identify the smallest number and print on console
+#include <stdio.h>
+
+float getNumberFromUser() {
+    float value;
+    printf("Enter the Number ");
+    scanf("%f", &value);
+return value;
+}
+
+float smallestOf(float i,float j) {
+    if (i < j) {
+        return j;
+} else {
+    return i;
+    }
+}
+
+void main() {
+    float a = getNumberFromUser(), b = getNumberFromUser();
+    printf("Smallest is %f",smallestOf(a,b ));
+}
