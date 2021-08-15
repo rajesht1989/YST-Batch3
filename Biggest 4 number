@@ -1,0 +1,68 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+
+void main() 
+{
+  int a = getNumberFromUser();
+  int b = getNumberFromUser();
+  int c = getNumberFromUser();
+  int d = getNumberFromUser();
+  printf("Biggest number is %d",(a,b,c,d));
+}
+int getNumberFromUser()
+{
+   
+
+
+printf ("Enter the number");
+int m;
+scanf("%d",&m);
+return m;
+
+}
+int BiggestNumberIs(int a,int b,int c,int d)
+{
+    if (a>b)
+{
+    if (a>c)
+{
+    if (a>d)
+{
+    printf("Biggest number is %d",a);
+    
+}
+else 
+{
+    printf("Biggest number is %d",d);
+}
+}
+}
+
+    else
+if (b>c)
+{
+    if (b>d)
+{
+    printf("Biggest number is %d",b);
+}
+else
+{
+    printf("Biggest number is %d",d);
+}
+}
+else
+if (c>d)
+{
+    printf("Biggest number is %d",c);
+}
+ else
+{
+    printf("Biggest number is %d",d);
+}  
+}
+
+
+
+
+   
+
