@@ -1,0 +1,21 @@
+// get number from user identify the area of rectangle
+//A=wl
+#include<stdio.h>
+int getNumberFromUser()
+{
+    int v;
+    printf("Enter a number");
+    scanf("%d",&v);
+    return v;
+}
+int areaOfRectangle(int w,int l)
+{
+    return w*l;
+}
+void main(){
+    int w=getNumberFromUser();
+    int l=getNumberFromUser();
+    int A=areaOfRectangle(w,l);
+    
+    
+}
