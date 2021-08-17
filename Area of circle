@@ -1,0 +1,23 @@
+// get number from user identify  area of circle
+//A=πr^2
+#include<stdio.h>
+int getNumberFromUser()
+{
+    int v;
+    printf("Enter a number");
+    scanf("%d",&v);
+    return v;
+}
+ float areaOfCircle(int r)
+{
+    return 3.14*r*r;
+}
+void main() 
+{
+    int r=getNumberFromUser();
+   
+    float a=areaOfCircle( r);
+    printf("area of circle %f",a);
+    
+    
+}
