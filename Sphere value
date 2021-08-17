@@ -1,0 +1,22 @@
+// get radius from user identify the sphere value
+#include<stdio.h>
+
+    int getRadiusFromUser()
+    {
+        int radius;
+        printf("Enter the radius");
+        scanf("%d",&radius);
+        return radius;
+    }
+    float sphereValue(int radius)
+    {
+        return 4/3*3.14*radius*radius*radius;
+    }
+    void main ()
+    {
+        int s= getRadiusFromUser();
+        float R= sphereValue(s);
+        printf("sphere value %f",R);
+        
+    }
+
