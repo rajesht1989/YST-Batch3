@@ -1,5 +1,6 @@
 // get number from user identify  hexagon of perimeter
 //p=6a
+
 #include<stdio.h>
 int getNumberFromUser()
 {
@@ -8,10 +9,12 @@ int getNumberFromUser()
     scanf("%d",&m);
     return m;
 }
+
  int hexagonOfPerimeter(int a)
 {
     return 6*a;
 }
+
 void main() 
 {
     int a=getNumberFromUser();
