@@ -1,0 +1,23 @@
+//Get the width,length of  from user, identify the area of rectangle and print on console 
+
+#include <stdio.h>
+int getWidthFromUser() {
+    int widht;
+    printf("Enter the Width");
+    scanf("%d", &widht);
+    return widht;
+}
+int getLengthFromUser() {
+   int length;
+   printf("Enter the Length");
+    scanf("%d", &length);
+    return length;
+}
+int areaOfRectangle(int width, int length){
+    return  width * length;
+}
+void main(){
+   int width = getWidthFromUser();
+   int length = getLengthFromUser();
+ printf("Area is %d", areaOfRectangle(width, length));
+}
