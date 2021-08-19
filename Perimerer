@@ -1,0 +1,16 @@
+//Get radius from user and identify the perimeter of circle and print on console
+
+#include <stdio.h>
+float getRadiusFromUser(){
+    float radius;
+    printf("Enter the Radius");
+    scanf("%f",&radius);
+    return radius;
+}
+float perimeterOfCircle(float radius){
+    return 2 * 3.14 * radius ;
+}
+void main(){
+  float radius=getRadiusFromUser();
+ printf("Perimeter is %f",perimeterOfCircle(radius));
+}
