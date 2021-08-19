@@ -1,0 +1,205 @@
+[8/18, 10:54 PM] Ajay Jp: //Get sides from user and identify the area of hexagon and print on console
+
+/*
+A = 3^3/2 a^2
+*/
+
+#include<stdio.h>
+
+
+int getSideFromUser(){
+    int side;
+    printf("Enter the side");
+    scanf("%d", &side);
+    return side;
+}
+
+
+float areaOfHexagon(int side){
+    return  (3^3/2)  * side * side;
+}
+
+
+void main (){
+    int side = getSideFromUser();
+    printf("Area is %f",areaOfHexagon(side));
+}
+[8/18, 10:54 PM] Ajay Jp: //Get the width,length of  from user, identify the perimeter of rectangle and print on console 
+/*
+P=2(l + w)
+*/
+#include <stdio.h>
+
+int getWidthFromUser() {
+    int width;
+    printf("Enter the Width");
+    scanf("%d", &width);
+    return width;
+}
+
+int getLengthFromUser() {
+    int length;
+    printf("Enter the Length");
+    scanf("%d", &length);
+    return length;
+}
+
+int perimeterOfRectangle(int width, int length) {
+    return 2 * (width + length);
+}
+
+void main() {
+    int width = getWidthFromUser();
+    int length = getLengthFromUser();
+    printf("Perimeter is %d", perimeterOfRectangle(width, length));
+}
+[8/18, 10:54 PM] Ajay Jp: //Get sides from user and identify the perimeter of hexagon and print on console
+
+/*
+P = 6 a
+*/
+
+#include<stdio.h>
+
+
+int getSideFromUser(){
+    int side;
+    printf("Enter the side");
+    scanf("%d", &side);
+    return side;
+}
+
+
+int perimeterOfHexagon(int side){
+    return  6 * side;
+}
+
+
+void main (){
+    int side = getSideFromUser();
+    printf("Perimeter is %d",perimeterOfHexagon(side));
+}
+[8/18, 10:54 PM] Ajay Jp: //Get radius from user and identify the volume of sphere and print on console
+
+
+#include <stdio.h>
+
+float getRadiusFromUser(){
+    float radius;
+    printf("Enter the Radius");
+    scanf("%f",&radius);
+    return radius;
+}
+
+
+float volumeOfSphere(float radius){
+    return 3.14 * radius * radius * radius * 4/3;
+}
+
+
+void main(){
+    float radius=getRadiusFromUser();
+    printf("Volume is %f",volumeOfSphere(radius));
+}
+[8/18, 10:54 PM] Ajay Jp: //Get radius from user and identify the perimeter of circle and print on console
+
+
+#include <stdio.h>
+
+float getRadiusFromUser(){
+    float radius;
+    printf("Enter the Radius");
+    scanf("%f",&radius);
+    return radius;
+}
+
+
+float perimeterOfCircle(float radius){
+    return 2 * 3.14 * radius ;
+}
+
+
+void main(){
+    float radius=getRadiusFromUser();
+    printf("Perimeter is %f",perimeterOfCircle(radius));
+}
+[8/18, 10:54 PM] Ajay Jp: //Get the width,length of  from user, identify the area of rectangle and print on console 
+/*
+A=wl
+*/
+#include <stdio.h>
+
+int getWidthFromUser() {
+    int width;
+    printf("Enter the Width");
+    scanf("%d", &width);
+    return width;
+}
+
+int getLengthFromUser() {
+    int length;
+    printf("Enter the Length");
+    scanf("%d", &length);
+    return length;
+}
+
+int areaOfRectangle(int width, int length) {
+    return  width * length;
+}
+
+void main() {
+    int width = getWidthFromUser();
+    int length = getLengthFromUser();
+    printf("Area is %d", areaOfRectangle(width, length));
+}
+[8/18, 10:54 PM] Ajay Jp: //Get the radius and height from user, identify the volume of cylinder and print on console 
+/*
+V=πr^2h
+*/
+#include <stdio.h>
+
+float getRadiusFromUser() {
+   float radius;
+    printf("Enter Radius");
+    scanf("%f", &radius);
+    return radius;
+}
+
+float getHeightFromUser() {
+    float height;
+    printf("Enter Height");
+    scanf("%f", &height);
+    return height;
+}
+
+float volumeOfCylinder(float radius, float height) {
+    return 3.14 * radius * radius * height;
+}
+
+void main() {
+    float radius = getRadiusFromUser();
+    float height = getHeightFromUser();
+    printf("Volume is %f", volumeOfCylinder(radius,height));
+}
+[8/18, 10:54 PM] Ajay Jp: //Get radius from user and identify the area of circle and print on console
+
+
+#include <stdio.h>
+
+float getRadiusFromUser(){
+    float radius;
+    printf("Enter the Radius");
+    scanf("%f",&radius);
+    return radius;
+}
+
+
+float areaOfCircle(float radius){
+    return 3.14 * radius * radius;
+}
+
+
+void main(){
+    float radius=getRadiusFromUser();
+    printf("Area is %f",areaOfCircle(radius));
+}
