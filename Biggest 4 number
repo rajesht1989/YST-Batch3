@@ -1,0 +1,55 @@
+//Get number from user identify the 2nd biggest number print on console
+#include<stdio.h>
+int getNumberFromUser()
+{
+    int m;
+    printf("Enter the Number");
+    scanf("%d",&m);
+    return m;
+}
+int BiggestNumber(int a,int b,int c,int d)
+{
+    if (a>=b)
+    {
+        if (a>=c)
+        {
+            if (a>=d)
+            {
+  printf("2nd biggest number is %d",a);
+            }
+        }
+    }
+else
+if (b>=c)
+{
+    printf("2nd biggest number is%d",d);
+if (b>=d)    
+{
+   printf("2nd biggest number is %d",b);
+}
+else 
+{
+   printf("2nd biggest number is %d",d);
+}
+
+}
+else
+if (c>=d)
+{  
+  printf("2nd biggest number is %d",c);
+}
+else
+{
+ printf("2nd biggest number is %d",d);  
+}
+}
+void main()
+{
+int a = getNumberFromUser();
+int b = getNumberFromUser();
+int c = getNumberFromUser();
+int d = getNumberFromUser();
+int m = BiggestNumber(a,b,c,d);
+printf("%d",m);
+
+}
