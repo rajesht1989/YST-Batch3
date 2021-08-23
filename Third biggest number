@@ -1,0 +1,56 @@
+//Requirement: Get  4 number from user, identify the third biggest number and print it on console
+
+
+#include<stdio.h>
+
+int getNumberFromUser(){
+    int value;
+    printf("Enter the Number");
+    scanf("%d", &value);
+    return value;
+}
+
+
+
+int biggestNumber(int a,int b,int c,int d){
+    if (a > b && a > c && a > d)
+    {
+    return a;
+    }
+    else if ( b > c && b > d)
+    {
+        return b;
+    }
+    else if (c > d)
+    {
+        return c;
+    }
+    else 
+    {
+        return d;
+    }
+}
+int thirdBiggestNumber(int a,int b,int c,int d)
+    {
+        int bN=biggestNumber(a,b,c,d);
+
+            if (bN == a && b)
+            {
+            return biggestNumber (0,0,c,d);
+        }
+        else (bN == c && d);
+        {
+            return biggestNumber (a,b,0,0);
+        }
+    }
+
+
+
+    void main(){
+    int a = getNumberFromUser();
+    int b = getNumberFromUser();
+    int c = getNumberFromUser();
+    int d = getNumberFromUser();
+    int n = thirdBiggestNumber(a,b,c,d);
+    printf("Third biggest number is %d",n);
+    }
