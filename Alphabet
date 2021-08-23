@@ -1,0 +1,31 @@
+//REQ :GET AN CHARACTER FROM USER  A,B,C,D AND PRINT IT'S WORD ON CONSOLE
+char getCharacterFromUser(){
+    char a;
+    printf("Enter A Character ");
+    scanf("%c",&a);
+    return a;
+}
+char Word(char a){
+    if(a=='a'){
+       printf(" The Word Is Aundipatty");
+    }
+    else{
+        if(a=='b'){
+            printf("The Word Is Batman");
+        }
+    }
+    if(a=='c'){
+        printf("The Word Is Culture");
+    }
+    else{
+        if(a=='d'){
+            printf("The Word Is Dubbing ");
+        }
+    }
+}
+#include<stdio.h>
+void main(){
+    char a=getCharacterFromUser();
+    char b=Word(a);
+    printf("%c",b);
+}
