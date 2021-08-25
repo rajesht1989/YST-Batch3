@@ -1,0 +1,42 @@
+// get number from user identify print the number in word.
+#include <stdio.h>
+int getNumberFromUser()
+{
+    int m;
+    printf("Enter the number");
+    scanf("%d",& m);
+    return m;
+}
+int numberInCity( int a)
+{
+    if(a==1)
+    {
+        printf("Aundipatti");
+    }
+    else if(a==2)
+    {
+        printf("Theni");
+    }
+else if(a==3)
+{
+    printf("Jakkampatty");
+}
+else if(a==4)
+{
+    printf("Madurai");
+}
+else if(a==5)
+{
+    printf("Chennai");
+}
+else
+{
+    printf("invaid value");
+}
+}
+void main()
+{
+    int a = getNumberFromUser();
+    int b = numberInCity(a);
+    
+}
