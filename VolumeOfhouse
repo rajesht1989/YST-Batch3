@@ -1,0 +1,24 @@
+#include<stdio.h>
+
+int getNumberFromUser()
+{
+    int r;
+    printf("enter the number");
+    scanf("%d",&r);
+    return r;
+}
+int volumeOfHouse(int w,int h,int l)
+{
+    return w*h*l;
+    
+}
+void main()
+{
+    int w= getNumberFromUser();
+    int h= getNumberFromUser();
+    int l= getNumberFromUser();
+    int v= volumeOfHouse(w,h,l);
+    printf("volum of House%d",v);
+}
+
+

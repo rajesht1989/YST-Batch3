@@ -1,0 +1,22 @@
+// get number from user identify the hexagon of area
+#include<stdio.h>
+#include<math.h>
+
+
+    int getNumberFromUser()
+    {
+        int value;
+        printf("Enter the number");
+        scanf("%d",& value);
+        return value;
+    }
+    float hexagonOfArea(int area)
+    {
+        return (3*sqrt(3))/2.0*pow(a,2);
+    }
+void main ()
+    {
+        int a=getNumberFromUser();
+        float b=hexagonOfArea(a);
+        printf("hexagon of area %f",b);
+    }

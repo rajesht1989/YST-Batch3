@@ -1,0 +1,56 @@
+// get 4 no from user identify the greate number and print on console
+#include <stdio.h>
+int main() {
+int a=getNumberFromUser();
+int b=getNumberFromUser();
+int c=getNumberFromUser();
+int d=getNumberFromUser();
+printf("Biggest no is %d",(a,b,c,d));
+}
+int getNumberFromUser()
+{
+    printf("Enter the number");
+    int value;
+    scanf("%d",&value);
+    return value;
+}
+int Biggest (int a,int b,int c,int d)
+{
+    if(a>b)
+    {
+        if(a>c)
+        {
+            if(a>d)
+            {
+                printf("Biggest no is%d",a);
+            }
+                    else
+{
+    printf("Biggest no is%d",d);
+    
+}
+}
+}
+else
+if(b>c)
+{
+    if(b>d)
+    {
+        printf("Biggest no is %d",b);
+    }
+    else
+{
+    printf("Biggest no is %d",d);
+}
+
+                }
+                else
+if(c>d)
+{
+    printf("Biggest no is%d",c);
+}
+else
+{
+    printf("Biggest no is%d",d);
+}
+}

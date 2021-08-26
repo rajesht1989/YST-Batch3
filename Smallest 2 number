@@ -1,0 +1,22 @@
+// get 2 no from user identify the smallest number and or print on console
+
+int main() {
+    int a=getNumberFromUser();
+    int b=getNumberFromUser();
+    printf("smallest no is%d",(a,b));
+}
+int getNumberFromUser()
+{
+    printf("Enter a number");
+    int value;
+    scanf("%d",&value);
+    return value;
+}
+int smallestnois(int a,int b)
+{
+    if(a<b)
+    {
+        printf("smallest no is%d",a);
+    }
+}
+   

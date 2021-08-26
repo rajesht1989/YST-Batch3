@@ -1,0 +1,46 @@
+//get age from user and identify the nature of once age and give in a massage
+
+#include<stdio.h>
+int getNumberFromUser()
+{
+    int v;
+    printf("Enter the number ") ;
+    scanf("%d",&v) ;
+    return v;
+}
+int humanAge(int age)
+{
+    if(age<=12)
+    {
+        printf("child \n" );
+        printf("education is the key to success");
+    }
+    else if(age>=12 && age<=19)
+    {
+    printf("Teenage\n");
+    printf("I live in my own little world");
+}
+else if(age>=19 && age<=39)
+{
+    printf("Adult\n");
+    printf("If you not tired you are doing it wrong");
+}
+else if(age>=39 && age<=59)
+{
+    printf("middle adult\b");
+    printf("success is becoming in middle adult");
+}
+else
+{
+ printf("senior adult\n");
+ printf("youth is gift of nature but age is a work of art");
+}
+
+}
+void main()
+{
+int a=getNumberFromUser();
+
+int r= humanAge(a);
+
+}

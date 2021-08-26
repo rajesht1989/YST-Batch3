@@ -1,0 +1,40 @@
+// Get number from user identify  print the number in word
+#include <stdio.h>
+int getNumberFromUser()
+{
+    int v;
+    printf("Enter the number");
+    scanf("%d",&v);
+    return v;
+    
+}
+int number(int a)
+{
+    if(a==1)
+{
+      printf("one");
+}
+else if (a==2)
+    {
+        printf("two");
+    }
+   else if (a==3)
+    {
+        printf("three");
+    }
+    else if (a==4)
+        {
+            printf("four");
+        }
+        else
+{
+    printf("invalid value");
+}
+}
+
+void main()
+{
+    int a = getNumberFromUser();
+    int b =number(a);
+   
+}
