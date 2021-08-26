@@ -1,0 +1,41 @@
+Get a char among a,b,c,d and print its word on console.
+#include <stdio.h>
+char getCharacterFromUser()
+{
+    char v;
+    printf("Ender the character");
+    scanf("%c",&v);
+    return v;
+
+}
+char Word(char a)
+{
+    if
+(a=='a')
+{
+printf("Apple");
+}
+else 
+{
+    if (a=='b')
+    {
+        printf("ball");
+    }
+    if (a=='c')
+    {
+        printf("cat");
+    }
+    else {
+        if (a=='d')
+        {
+            printf("doll");
+        }
+    }
+}
+}
+void main()
+{
+    char a = getCharacterFromUser();
+    char b =Word(a);
+    printf("%c",b);
+}
