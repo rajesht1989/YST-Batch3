@@ -1,0 +1,26 @@
+//REQUIREMENT:Get Alphabet from user and identify the Vowels and print it on console 
+
+#include<stdio.h>
+
+char getAlphabetFromUser(){
+    char a ;
+    printf("Enter the Letter ");
+    scanf("%c", &a);
+    return a;
+}
+
+
+
+int theVowel(char v){
+    if(v == 'a'||v == 'A'||v == 'e'||v == 'E'||v== 'i'||v == 'I'||v == 'o'||v == 'O'||v== 'u'||v == 'U'){
+        printf("'%c' Is Vowel",v);
+    }
+    else{
+        printf("Invalid Letter");
+    }
+    }
+    
+
+void main(){
+   int v = theVowel(getAlphabetFromUser());
+}
