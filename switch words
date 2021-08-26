@@ -9,6 +9,7 @@
         return value;
         
     }
+    void printWord(int a) {
         switch (a)
         {
             case 1:
@@ -46,9 +47,10 @@
             break;
             
         }
+    }
         void main()
         {
             int a=getNumberFromUser();
-            
-            printf("The word is%d",a);
+            printWord(a);
+            // printf("The word is%d",a);
         }
