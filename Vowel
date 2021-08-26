@@ -1,0 +1,44 @@
+//get number from user identify the vowels print on console
+#include<stdio.h>
+
+    char getcharFromUser()
+    {
+        char value;
+        printf("enter the character " );
+        scanf("%c",&value);
+        return value;
+        
+    }
+    char vowel(a)
+    {
+        switch (a)
+        {
+            case 'a':
+            printf("vowel");
+            break;
+            case 'e':
+            printf("vowel");
+            break;
+            case 'i':
+            printf("vowel");
+            break;
+            case 'o':
+            printf("vowel");
+            break;
+            case 'u':
+            printf("vowel");
+            break;
+            default:
+            printf("invalid value");
+            break;
+            
+        }
+    }
+        void main()
+        {
+            char a=getcharFromUser();
+             char b=vowel(a);
+            
+            
+        }
+        
