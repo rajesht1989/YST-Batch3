@@ -12,12 +12,43 @@ char getAlphabetFromUser(){
 
 
 int theVowel(char v){
-    if(v == 'a'||v == 'A'||v == 'e'||v == 'E'||v== 'i'||v == 'I'||v == 'o'||v == 'O'||v== 'u'||v == 'U'){
-        printf("'%c' Is Vowel",v);
+    
+    switch (v) {
+        case 'a':
+                printf("'%c' Is Vowel",v);
+        break;
+        case 'A':
+                printf("'%c' Is Vowel",v);
+        break;
+        case 'e':
+                printf("'%c' Is Vowel",v);
+        break;
+        case 'E':
+                printf("'%c' Is Vowel",v);
+        break;
+        case 'i':
+                printf("'%c' Is Vowel",v);
+        break;
+        case 'I':
+                printf("'%c' Is Vowel",v);
+        break;
+        case 'o':
+                printf("'%c' Is Vowel",v);
+        break;
+        case 'O':
+                printf("'%c' Is Vowel",v);
+        break;
+        case 'u':
+                printf("'%c' Is Vowel",v);
+        break;
+        case 'U':
+                printf("'%c' Is Vowel",v);
+        break;
+        default: 
+          printf("'%c' Is not a Vowel",v);
+        break;
     }
-    else{
-        printf("Invalid Letter");
-    }
+    
     }
     
 
