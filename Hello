@@ -1,0 +1,25 @@
+
+    #include<stdio.h>
+    int getNumberFromUser()
+    {
+        int v;
+        printf("enter tha number");
+        scanf("%d",&v);
+        return v;
+    }
+    int printFor(int n)
+    {
+        for(int i=0;i<n;i++)
+        {
+            printf("Hellow \n");
+    }
+    }
+    void main()
+    {
+    int a= getNumberFromUser();
+    printFor(a);
+}
+
+
+
+    
