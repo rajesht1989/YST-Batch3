@@ -1,0 +1,31 @@
+//REQUIREMENT:Create a Triangle by using CR7 and print it on console
+
+
+
+#include<stdio.h>
+
+
+int drawTriangle(int a){
+    for(int i = 0; i < a; i++){
+        printf("CR7\t");
+    }
+    printf("\n");
+}
+int draw(int b){
+    for(int c = 0; c < b; c++){
+        printf("CR7\t");
+    }
+    printf("\n");
+}
+void triangle(int c){
+    for(int d = 0; d < c; d++){
+        printf("CR7\t");
+    }
+}
+
+
+void main(){
+    drawTriangle(1);
+    draw(2);
+    triangle(3);
+}
