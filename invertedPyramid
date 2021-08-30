@@ -1,0 +1,26 @@
+//get number from user print   inverted pyramid on console
+#include<stdio.h>
+int getNumberFromUser()
+{
+    int v;
+    printf("enter the number");
+    scanf("%d",&v);
+    return v;
+}
+int invertedPyramid (int a)
+{
+    for (int i=1;i<=a;i++)
+    {
+        for(int j=a;j>=i;j--)
+        {
+            printf("%d\t",j);
+    }
+    printf("\n");
+}
+}
+void main()
+
+{
+int a=getNumberFromUser();
+invertedPyramid (a);
+}
