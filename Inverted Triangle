@@ -1,0 +1,30 @@
+//Get Number from user and create an inverted triangle and  print it on console
+
+
+#include<stdio.h>
+
+
+int getNumberFromUser()
+{
+    int value;
+    printf("Enter the Number");
+    scanf("%d", &value);
+    return value;
+}
+int invertedTriangle (int a)
+{
+        for (int i = 1; i <= a;  i++)
+    {
+        for (int j = a; j >= i; j--)
+        {
+            printf("%d\t",i);
+    }
+    printf("\n");
+}
+}
+
+
+void main(){
+int a = getNumberFromUser();
+invertedTriangle (a);
+}
