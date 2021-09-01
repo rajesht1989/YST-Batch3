@@ -1,0 +1,36 @@
+//get number from user print Hellow triangle
+
+#include<stdio.h>
+int getNumberFromUser()
+{
+    int v;
+    printf("enter a number");
+    scanf("%d",&v);
+    return v;
+}
+int hellowTriangle (int n)
+{
+    for(int i=0;i<=n;i++)
+    {
+        for(int j=0;j<=i;j++)
+        {
+            if(j==0||j==i||i==n)
+            {
+                printf("*\t");
+                
+            }
+            else
+{
+    printf("\t");
+
+}
+
+        }
+        printf("\n");
+    }
+}
+void main()
+{
+    int n= getNumberFromUser();
+    hellowTriangle(n);
+}
