@@ -35,8 +35,9 @@ class _MiniState extends State<Mini> {
                 accountEmail: Text("+91 9876543210"),
                 otherAccountsPictures: <Widget>[],
                 currentAccountPicture: CircleAvatar(
-                  child: Text("Xyz"),
-                  backgroundColor: Colors.white,
+                  backgroundImage: NetworkImage(
+                    "https://is3-ssl.mzstatic.com/image/thumb/Purple128/v4/b3/d4/fc/b3d4fc2e-cc8d-72c6-1ed6-6b12f6a348b2/source/512x512bb.jpg",
+                  ),
                 ),
               ),
               ListTile(
@@ -162,12 +163,14 @@ class _MiniState extends State<Mini> {
           ),
         ),
         body: Center(
-          child: Text(
-            "Add Contact and Continue Chat",
-            style: TextStyle(
-              fontSize: 25.0,
-              color: Colors.amber,
-            ),
+          child: RaisedButton(
+            child: Text("Click me"),
+            color: Colors.blue,
+            splashColor: Colors.green,
+            onPressed: () {},
+            elevation: 30.5,
+            padding: EdgeInsets.all(25.9),
+            textColor: Colors.white,
           ),
         ),
         floatingActionButton: FloatingActionButton(
@@ -175,6 +178,7 @@ class _MiniState extends State<Mini> {
           child: IconButton(
             icon: Icon(Icons.create),
             onPressed: () {},
+            splashColor: Colors.pink,
           ),
           elevation: 30.0,
         ),
