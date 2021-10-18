@@ -18,6 +18,8 @@ class user1ViewController: UIViewController {
         if value != nil
         {
             myLableText.text="Hello, \(value!)"
+            myLableText.layer.borderWidth = 2
+            myLableText.layer.borderColor = UIColor.red.cgColor
         }
 
     }
