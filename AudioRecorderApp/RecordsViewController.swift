@@ -10,7 +10,7 @@
 import UIKit
 import CoreData
 
-class saveRecordsViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class RecordsViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     var people: [NSManagedObject] = []
 //    var arrayList :[String] = []
