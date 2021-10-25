@@ -203,7 +203,7 @@ class ViewController: UIViewController,AVAudioPlayerDelegate,AVAudioRecorderDele
     }
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
         if flag {
-            
+            //add text into label
             soundRecordPlayStatusLabel.text = "Recording Completed"
             
             
