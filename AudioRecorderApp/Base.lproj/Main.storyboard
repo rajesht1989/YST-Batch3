@@ -116,7 +116,6 @@
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="saveBtnTapped:" destination="BYZ-38-t0r" id="pCZ-XS-pTt"/>
-                                <segue destination="ddY-4z-e0s" kind="show" id="3Sh-jI-jNC"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -129,6 +128,7 @@
                         <outlet property="soundTitileTextField" destination="2B8-UJ-DZ8" id="yvq-Uk-Rcg"/>
                         <outlet property="stopBtnOutlet" destination="x2B-fg-u5j" id="5g6-lT-jUX"/>
                         <outlet property="titleLabel" destination="oSo-nW-Dsl" id="T1X-Gu-SWa"/>
+                        <segue destination="ddY-4z-e0s" kind="show" identifier="segueToNext" id="qw9-Ip-sT3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -156,6 +156,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="iTX-wJ-kiL" id="6gz-ez-9aq"/>
+                                    <outlet property="delegate" destination="iTX-wJ-kiL" id="CvM-Mv-yTy"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="usE-XB-rLl"/>

@@ -11,10 +11,12 @@
 		D60CF1C027258CED00C038C9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60CF1BF27258CED00C038C9 /* SceneDelegate.swift */; };
 		D60CF1C227258CED00C038C9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60CF1C127258CED00C038C9 /* ViewController.swift */; };
 		D60CF1C527258CED00C038C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D60CF1C327258CED00C038C9 /* Main.storyboard */; };
-		D60CF1C827258CED00C038C9 /* AudioRecorderApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D60CF1C627258CED00C038C9 /* AudioRecorderApp.xcdatamodeld */; };
 		D60CF1CA27258CF900C038C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D60CF1C927258CF900C038C9 /* Assets.xcassets */; };
 		D60CF1CD27258CF900C038C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D60CF1CB27258CF900C038C9 /* LaunchScreen.storyboard */; };
 		D60CF1D5272666AF00C038C9 /* RecordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60CF1D4272666AF00C038C9 /* RecordsViewController.swift */; };
+		D6204CD1274DF95700E5A174 /* RecordsCoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6204CCF274DF95700E5A174 /* RecordsCoreDataProperties.swift */; };
+		D6204CD2274DF95700E5A174 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6204CD0274DF95700E5A174 /* Record.swift */; };
+		D6204CD7274E577300E5A174 /* AudioCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D6204CD5274E577300E5A174 /* AudioCoreData.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,11 +25,13 @@
 		D60CF1BF27258CED00C038C9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D60CF1C127258CED00C038C9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D60CF1C427258CED00C038C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		D60CF1C727258CED00C038C9 /* AudioRecorderApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AudioRecorderApp.xcdatamodel; sourceTree = "<group>"; };
 		D60CF1C927258CF900C038C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D60CF1CC27258CF900C038C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D60CF1CE27258CF900C038C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D60CF1D4272666AF00C038C9 /* RecordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsViewController.swift; sourceTree = "<group>"; };
+		D6204CCF274DF95700E5A174 /* RecordsCoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordsCoreDataProperties.swift; sourceTree = "<group>"; };
+		D6204CD0274DF95700E5A174 /* Record.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
+		D6204CD6274E577300E5A174 /* AudioCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AudioCoreData.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,9 +72,19 @@
 				D60CF1C927258CF900C038C9 /* Assets.xcassets */,
 				D60CF1CB27258CF900C038C9 /* LaunchScreen.storyboard */,
 				D60CF1CE27258CF900C038C9 /* Info.plist */,
-				D60CF1C627258CED00C038C9 /* AudioRecorderApp.xcdatamodeld */,
+				D64C719727422815008A0862 /* CoreData */,
 			);
 			path = AudioRecorderApp;
+			sourceTree = "<group>";
+		};
+		D64C719727422815008A0862 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				D6204CD5274E577300E5A174 /* AudioCoreData.xcdatamodeld */,
+				D6204CD0274DF95700E5A174 /* Record.swift */,
+				D6204CCF274DF95700E5A174 /* RecordsCoreDataProperties.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,8 +160,10 @@
 			files = (
 				D60CF1D5272666AF00C038C9 /* RecordsViewController.swift in Sources */,
 				D60CF1C227258CED00C038C9 /* ViewController.swift in Sources */,
+				D6204CD1274DF95700E5A174 /* RecordsCoreDataProperties.swift in Sources */,
 				D60CF1BE27258CED00C038C9 /* AppDelegate.swift in Sources */,
-				D60CF1C827258CED00C038C9 /* AudioRecorderApp.xcdatamodeld in Sources */,
+				D6204CD2274DF95700E5A174 /* Record.swift in Sources */,
+				D6204CD7274E577300E5A174 /* AudioCoreData.xcdatamodeld in Sources */,
 				D60CF1C027258CED00C038C9 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -368,13 +384,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		D60CF1C627258CED00C038C9 /* AudioRecorderApp.xcdatamodeld */ = {
+		D6204CD5274E577300E5A174 /* AudioCoreData.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				D60CF1C727258CED00C038C9 /* AudioRecorderApp.xcdatamodel */,
+				D6204CD6274E577300E5A174 /* AudioCoreData.xcdatamodel */,
 			);
-			currentVersion = D60CF1C727258CED00C038C9 /* AudioRecorderApp.xcdatamodel */;
-			path = AudioRecorderApp.xcdatamodeld;
+			currentVersion = D6204CD6274E577300E5A174 /* AudioCoreData.xcdatamodel */;
+			path = AudioCoreData.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

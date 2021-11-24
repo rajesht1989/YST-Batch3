@@ -13,7 +13,7 @@ class ViewController: UIViewController,AVAudioPlayerDelegate,AVAudioRecorderDele
     var soundNoteID:String!
     var soundNoteTitle:String!
     var soundURL:String!
-    var audioRecorder:AVAudioRecorder!
+    var audioRecorder:AVAudioRecorder! 
     var audioPlayer:AVAudioPlayer!
     
     @IBOutlet weak var recordBtnOutlet: UIButton!
@@ -34,19 +34,21 @@ class ViewController: UIViewController,AVAudioPlayerDelegate,AVAudioRecorderDele
     
     
     var audioData: Data?
-    
-    
+//
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
-        var records  = [Record]() // Where Locations = your NSManaged Class
 
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        
-        var fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Record")
-        
-        let result = try! context.execute(fetchRequest)
+//        let records : [Record] = [] // Where Locations = your NSManaged Class
+//
+//        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+//
+//        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Record")
+//
+//
+//        let record = try! context.fetch(Record.fetchRequest())
+//        let result = try! context.execute(fetchRequest)
         
 //        result.
         
@@ -54,11 +56,10 @@ class ViewController: UIViewController,AVAudioPlayerDelegate,AVAudioRecorderDele
 
         // Then you can use your properties.
 
-        for record in records {
-
-          print(record.name)
-
-        }
+//        for record in records {
+//            print(record.name ?? 0)
+//
+//        }
         
         
         
@@ -76,6 +77,8 @@ class ViewController: UIViewController,AVAudioPlayerDelegate,AVAudioRecorderDele
                                                         FileManager.SearchPathDomainMask.userDomainMask).first
         
         let audioFileName = UUID().uuidString + ".m4a"
+        let url = NSURL.fileURL(withPath: audioFileName as String)
+
         let audioFileURL = directoryURL!.appendingPathComponent(audioFileName)
         soundURL = audioFileName // soundURL stored in coreData
         
@@ -98,12 +101,14 @@ class ViewController: UIViewController,AVAudioPlayerDelegate,AVAudioRecorderDele
         audioRecorder?.delegate = self
         audioRecorder?.isMeteringEnabled = true
         audioRecorder?.prepareToRecord()
-        
         soundRecordPlayStatusLabel.text = "Ready to Record"
+        print("url : \(url)")
+       
         // Hides Navigation Controller Thin Line Shadow Bar
         self.navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
         
     }
+    
     
     @IBAction func recordBtnTapped(_ sender: Any) {
         
@@ -220,71 +225,73 @@ class ViewController: UIViewController,AVAudioPlayerDelegate,AVAudioRecorderDele
         
         soundRecordPlayStatusLabel.text = "Playing Completed"
         
-        recordBtnOutlet.setImage(UIImage(named: "Microphone-Jolly"), for: UIControl.State())
-        playBtnOutlet.setImage(UIImage(named: "Play-Jolly"), for: UIControl.State())
-        stopBtnOutlet.setImage(UIImage(named: "Stop-Outlined"), for: UIControl.State())
-        
+//        recordBtnOutlet.setImage(UIImage(named: "Microphone-Jolly"), for: UIControl.State())
+//        playBtnOutlet.setImage(UIImage(named: "Play-Jolly"), for: UIControl.State())
+//        stopBtnOutlet.setImage(UIImage(named: "Stop-Outlined"), for: UIControl.State())
+//
         playBtnOutlet.isSelected = false
         stopBtnOutlet.isEnabled = false
         recordBtnOutlet.isEnabled = true
         
     }
-    @IBAction func saveBtnTapped(_ sender: Any) {
+    @IBAction func saveBtnTapped(_ sender: UIBarButtonItem!) {
         
-        let soundsContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let recordsContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
-        let record = NSEntityDescription.insertNewObject(forEntityName: "Record", into: soundsContext) as! Record
+        let record = NSEntityDescription.insertNewObject(forEntityName: "Record", into: recordsContext) as! Record
         
-        var title:String = "Sound"
-        
-        if let title = soundTitileTextField.text {
-            var noteSoundTitle:String = title
-        }
-        record.name = title
-        record.audio = audioData
-
+//        var title:String = "Records"
+//
+//        if let title = soundTitileTextField.text {
+//
+//            var noteSoundTitle:String = title
+//            soundTitileTextField.text = noteSoundTitle
+//       }
+//        record.name = soundNoteTitle
+//        record.audio = audioData
+        var noteRecordTitle:String = "Record"
+        if (soundTitileTextField.text?.isEmpty)! {
+            noteRecordTitle = "Record"
+            soundTitileTextField.text = noteRecordTitle
+            
+        } else {
+        noteRecordTitle =  soundTitileTextField.text!
+    }
+        record.noteSoundTitle = noteRecordTitle
+//        
+       
         do {
-            try soundsContext.save()
-        } catch _ {
+            try recordsContext.save()
+            
+        } catch {
+            // error
         }
+       
         saveInformationLabel.alpha = 1
-        saveInformationLabel.text = "Saved " + title
+//        saveInformationLabel.text = soundURL
+//        saveInformationLabel.text = "Saved" + title 
         saveInformationLabel.adjustsFontSizeToFitWidth = true
         soundTitileTextField.text = ""
-        
-        // Set the audio recorder ready to record the next audio with a unique audioFileName
-//        let directoryURL = FileManager.default.urls(for: FileManager.SearchPathDirectory.documentDirectory, in:
-//                                                        FileManager.SearchPathDomainMask.userDomainMask).first // as! NSURL
-//
-//        let audioFileName = UUID().uuidString + ".m4a"
-//        let audioFileURL = directoryURL!.appendingPathComponent(audioFileName)
-//        soundURL = audioFileName       // Sound URL to be stored in CoreData
-//
-//        // Setup audio session
-//        let audioSession = AVAudioSession.sharedInstance()
-//        do {
-//            try audioSession.setCategory(AVAudioSession.Category(rawValue: convertFromAVAudioSessionCategory(AVAudioSession.Category.playAndRecord)), mode: .default)
-//        } catch _ {
-//        }
-//
-        // Define the recorder setting
-//        let recorderSetting = [AVFormatIDKey: NSNumber(value: kAudioFormatMPEG4AAC as UInt32),
-//                             AVSampleRateKey: 44100.0,
-//                       AVNumberOfChannelsKey: 2 ]
-//
-//        audioRecorder = try? AVAudioRecorder(url: audioFileURL, settings: recorderSetting)
-//        audioRecorder?.delegate = self
-//        audioRecorder?.isMeteringEnabled = true
-//        audioRecorder?.prepareToRecord()
-        
         soundRecordPlayStatusLabel.text = "Ready to Record"
-        
         playBtnOutlet.isEnabled = false
         stopBtnOutlet.isEnabled = false
         saveBtn.isEnabled = false
-        
+        self.navigationController?.popToRootViewController(animated: true)
+        self.performSegue(withIdentifier: "segueToNext", sender: sender)
+
     }
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "segueToNext") {
+            if segue.destination is RecordsViewController {
+
+               if let button:UIBarButtonItem = sender as! UIBarButtonItem? {
+                print(button.tag) //optional
+                  
+               }
+            }
+        }
+    }
+   
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         soundTitileTextField.resignFirstResponder()   // When the Enter key is pressed on the keyboard the keyboard will be dismissed.
         return false
@@ -317,6 +324,9 @@ class ViewController: UIViewController,AVAudioPlayerDelegate,AVAudioRecorderDele
                     
                 } // end else
             })
+        case AVAudioSession.RecordPermission.denied:
+            print("Permission denied")
+        
         @unknown default:
             print("ERROR! Unknown Default. Check!")
         } // end switch
