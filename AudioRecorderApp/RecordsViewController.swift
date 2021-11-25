@@ -16,19 +16,17 @@ class RecordsViewController: UIViewController,UITableViewDelegate,UITableViewDat
     
     @IBOutlet weak var tableView: UITableView!
     
-//    var record: [NSManagedObject] = []
+    var recordsListArray:[Record]  = []
     let cellId = "CellId"
-    var error: NSError? = nil
+   
     var audioPlayer:AVAudioPlayer = AVAudioPlayer()
     var soundNoteTitle:String!
-    var recordsListArray:[Record]  = []
-    var soundsNoteID: String!
-
-    override func viewDidLoad() {
+    
+     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-       
+        
         title  = soundNoteTitle
         
        
@@ -41,8 +39,7 @@ class RecordsViewController: UIViewController,UITableViewDelegate,UITableViewDat
         let noteSoundsContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
         let noteSoundsFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Record")
-//        noteSoundsFetchRequest.predicate = NSPredicate(format: "noteID = %@", recordsNoteID)
-
+        
         do {
             let noteSoundsFetchResults = try noteSoundsContext.fetch(noteSoundsFetchRequest) as? [Record]
             recordsListArray = noteSoundsFetchResults!
@@ -52,7 +49,12 @@ class RecordsViewController: UIViewController,UITableViewDelegate,UITableViewDat
         self.tableView.reloadData()
        
     }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        1
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
     return recordsListArray.count
     }
     
@@ -68,35 +70,30 @@ class RecordsViewController: UIViewController,UITableViewDelegate,UITableViewDat
     }
      func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let noteSound: Record = recordsListArray[(indexPath as NSIndexPath).row] as Record
-        let soundURL = noteSound.noteSoundURL
-        //print(noteSoundURL!)
-        
-        let directoryURL = FileManager.default.urls(for: FileManager.SearchPathDirectory.documentDirectory, in:
-            FileManager.SearchPathDomainMask.userDomainMask).first // as NSURL
-        
-         let audioFileURL = directoryURL!.appendingPathComponent(soundURL!)
-        
-        do {
-            audioPlayer = try AVAudioPlayer(contentsOf: audioFileURL)
-        } catch let error1 as NSError {
-            error = error1
-        }
-        audioPlayer.play()
-        audioPlayer.delegate = self     // IMPORTANT: Must Delegate to Receive audioPlayerDidFinishPlaying notification
+         let noteSound: Record = recordsListArray[(indexPath as NSIndexPath).row] as Record
+         let noteSoundURL = noteSound.noteSoundURL
+         //print(noteSoundURL!)
+         
+         let directoryURL = FileManager.default.urls(for: FileManager.SearchPathDirectory.documentDirectory, in:
+             FileManager.SearchPathDomainMask.userDomainMask).first // as NSURL
+         
+         let audioFileURL = directoryURL!.appendingPathComponent(noteSoundURL!)
 
+         do {
+             audioPlayer = try AVAudioPlayer(contentsOf: audioFileURL)
+             
+         } catch _ {
+            
+         }
         
-        
+         audioPlayer.play()
+         audioPlayer.delegate = self
+
+
+     }
+}
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+
+        player.stop()
     }
 
-func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-
-    player.stop()
-    if audioPlayer.isPlaying == false {
-        
-    }
-
-    
-}
-
-}

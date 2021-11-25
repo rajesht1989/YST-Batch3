@@ -9,6 +9,9 @@ import Foundation
 import CoreData
 
 extension Record {
+    
     @NSManaged var noteSoundTitle:String?
     @NSManaged var noteSoundURL:String?
+    @NSManaged var noteSound: Data?
+    @NSManaged var name: String?
 }

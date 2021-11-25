@@ -40,26 +40,26 @@ class ViewController: UIViewController,AVAudioPlayerDelegate,AVAudioRecorderDele
         
         
 
-//        let records : [Record] = [] // Where Locations = your NSManaged Class
-//
-//        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-//
-//        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Record")
-//
-//
-//        let record = try! context.fetch(Record.fetchRequest())
+        let records : [Record] = [] // Where Locations = your NSManaged Class
+
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Record")
+
+
+        var record = try! context.fetch(Record.fetchRequest())
 //        let result = try! context.execute(fetchRequest)
         
 //        result.
         
-//        records = context.executeFetchRequest(fetchRequest, error: nil) as [Record]
+//        records = context.executeFetchRequest(fetchRequest) as [Record]
 
         // Then you can use your properties.
 
-//        for record in records {
-//            print(record.name ?? 0)
-//
-//        }
+        for record in records {
+            print(record.noteSoundTitle ?? 0)
+
+        }
         
         
         
@@ -217,7 +217,7 @@ class ViewController: UIViewController,AVAudioPlayerDelegate,AVAudioRecorderDele
             stopBtnOutlet.isEnabled = false
             
             
-            audioData = try? Data(contentsOf: recorder.url)
+//            audioData = try? Data(contentsOf: recorder.url)
             
         }
     }
@@ -239,7 +239,7 @@ class ViewController: UIViewController,AVAudioPlayerDelegate,AVAudioRecorderDele
         let recordsContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
         let record = NSEntityDescription.insertNewObject(forEntityName: "Record", into: recordsContext) as! Record
-        
+        record.noteSoundURL = soundURL
 //        var title:String = "Records"
 //
 //        if let title = soundTitileTextField.text {

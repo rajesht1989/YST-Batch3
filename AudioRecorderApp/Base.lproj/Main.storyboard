@@ -128,14 +128,14 @@
                         <outlet property="soundTitileTextField" destination="2B8-UJ-DZ8" id="yvq-Uk-Rcg"/>
                         <outlet property="stopBtnOutlet" destination="x2B-fg-u5j" id="5g6-lT-jUX"/>
                         <outlet property="titleLabel" destination="oSo-nW-Dsl" id="T1X-Gu-SWa"/>
-                        <segue destination="ddY-4z-e0s" kind="show" identifier="segueToNext" id="qw9-Ip-sT3"/>
+                        <segue destination="ddY-4z-e0s" kind="show" identifier="segueToNext" id="aAa-UI-2Ao"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1839.1304347826087" y="69.642857142857139"/>
         </scene>
-        <!--Records View Controller-->
+        <!--List Of Records-->
         <scene sceneID="mWt-fS-YeE">
             <objects>
                 <viewController storyboardIdentifier="RecordsViewController" id="ddY-4z-e0s" customClass="RecordsViewController" customModule="AudioRecorderApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -147,11 +147,11 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellId" id="2ou-QX-bSK">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellId" rowHeight="73" id="2ou-QX-bSK">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="73"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2ou-QX-bSK" id="IWH-gT-j2X">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="73"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -171,14 +171,14 @@
                             <constraint firstItem="usE-XB-rLl" firstAttribute="bottom" secondItem="j67-fS-Zrn" secondAttribute="bottom" id="hfl-AU-Rjc"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="dcY-Vm-PGe"/>
+                    <navigationItem key="navigationItem" title="List Of Records" id="dcY-Vm-PGe"/>
                     <connections>
                         <outlet property="tableView" destination="j67-fS-Zrn" id="6sr-mT-vxP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lyH-RV-f3i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2564" y="70"/>
+            <point key="canvasLocation" x="2562.3188405797105" y="69.642857142857139"/>
         </scene>
         <!--Item-->
         <scene sceneID="f5p-Pk-FCp">
