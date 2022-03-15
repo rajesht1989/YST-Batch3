@@ -1,8 +1,0 @@
-//Requirement:print "my name is ajay" "father name is sundar" "mother name is jothi" on the console
-
-#include <stdio.h>
-void main () {
-printf("my name is Ajay ");
-printf("my father name is sundar ");
-printf("my mother name is jothi ");
-}
