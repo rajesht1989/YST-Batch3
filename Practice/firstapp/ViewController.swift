@@ -1,17 +1,19 @@
 //
 //  ViewController.swift
-//  Learning
+//  firstapp
 //
-//  Created by apple on 21/03/22.
+//  Created by apple on 19/04/22.
 //
 
 import UIKit
+
+
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("hello")
+        
     }
 
 
