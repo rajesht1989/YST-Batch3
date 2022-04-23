@@ -7,7 +7,7 @@
 
 import UIKit
 
-/*
+/* Sample response
 {
     "result": [
         {
