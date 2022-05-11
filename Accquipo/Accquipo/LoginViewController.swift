@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class LoginViewController: UIViewController {
 
     @IBOutlet var googlButton : UIButton!
       
@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        /*
         googlButton.setTitle("", for: .normal)
             let googleImage = UIImage(named: "google")
         googlButton.setImage(googleImage?.withRenderingMode(.alwaysOriginal), for: .normal)
@@ -24,6 +24,7 @@ class ViewController: UIViewController {
         facebookButton.setTitle("", for: .normal)
             let facebookImage = UIImage(named: "facebook")
         facebookButton.setImage(facebookImage?.withRenderingMode(.alwaysOriginal), for: .normal)
+    */
     }
     }
 

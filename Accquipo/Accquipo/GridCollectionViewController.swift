@@ -31,14 +31,7 @@ class GridCollectionViewController: UIViewController {
         collectionView.collectionViewLayout = createLayout()
     }
     
-//    func configureHierarchy() {
-//        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createLayout())
-//        collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-//        collectionView.backgroundColor = .lightGray
-//        view.addSubview(collectionView)
-////        let cell = UICollectionViewCell()
-////        cell.backgroundColor = .lightGray
-//    }
+
 }
 extension GridCollectionViewController: UICollectionViewDataSource{
     
@@ -89,7 +82,7 @@ extension GridCollectionViewController: UICollectionViewDataSource{
 extension GridCollectionViewController {
     func createLayout() -> UICollectionViewLayout {
         
-        func gridSection() -> NSCollectionLayoutSection {
+    func gridSection() -> NSCollectionLayoutSection {
             let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
                                                   heightDimension: .fractionalHeight(1))
             let item = NSCollectionLayoutItem(layoutSize: itemSize)
@@ -111,7 +104,7 @@ extension GridCollectionViewController {
             return section
         }
         
-        func graphSection() -> NSCollectionLayoutSection {
+    func graphSection() -> NSCollectionLayoutSection {
             let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
                                                   heightDimension: .fractionalHeight(1))
             let item = NSCollectionLayoutItem(layoutSize: itemSize)
@@ -135,28 +128,21 @@ extension GridCollectionViewController {
         }
         
         
-        let layout = UICollectionViewCompositionalLayout { (sectionIndex: Int,
+            let layout = UICollectionViewCompositionalLayout { (sectionIndex: Int,
             layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
-            switch sectionIndex {
-            case 0 :
-                return gridSection()
-            case 1 :
-                return graphSection()
-            default :
-                return gridSection()
+              switch sectionIndex {
+                case 0 :
+                  return gridSection()
+                case 1 :
+                  return graphSection()
+                default :
+                  return gridSection()
             }
             
             
         }
         return layout
         
-//        let layout = UICollectionViewCompositionalLayout
-//
-//
-//
-//        let layout = UICollectionViewCompositionalLayout(section: section)
-//
-//        return layout
     }
 }
 
