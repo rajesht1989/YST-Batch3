@@ -15,6 +15,8 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Logout"
+
         /*
         googlButton.setTitle("", for: .normal)
             let googleImage = UIImage(named: "google")
@@ -25,6 +27,10 @@ class LoginViewController: UIViewController {
             let facebookImage = UIImage(named: "facebook")
         facebookButton.setImage(facebookImage?.withRenderingMode(.alwaysOriginal), for: .normal)
     */
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
     }
     }
 

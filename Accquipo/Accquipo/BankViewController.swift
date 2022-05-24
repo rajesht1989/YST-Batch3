@@ -54,6 +54,7 @@ extension BankViewController {
 
         let section = NSCollectionLayoutSection(group: group)
         section.interGroupSpacing = 15
+        
         section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
         
         

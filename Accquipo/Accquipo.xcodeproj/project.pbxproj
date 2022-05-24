@@ -20,6 +20,7 @@
 		1891243F2813C5950017F8FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1891243E2813C5950017F8FB /* Assets.xcassets */; };
 		189124422813C5950017F8FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 189124402813C5950017F8FB /* LaunchScreen.storyboard */; };
 		1891244B2813DCBC0017F8FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 189124492813DCBC0017F8FB /* Main.storyboard */; };
+		880B338C37998B66C55F5B81 /* Pods_Accquipo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 337365F6D8F9ADE10A8E4C45 /* Pods_Accquipo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,9 @@
 		189124412813C5950017F8FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		189124432813C5950017F8FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1891244A2813DCBC0017F8FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		337365F6D8F9ADE10A8E4C45 /* Pods_Accquipo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Accquipo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A2F92DDE6721A6E078EAC36 /* Pods-Accquipo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Accquipo.release.xcconfig"; path = "Target Support Files/Pods-Accquipo/Pods-Accquipo.release.xcconfig"; sourceTree = "<group>"; };
+		E0352F9D7CC54BD370F6EED9 /* Pods-Accquipo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Accquipo.debug.xcconfig"; path = "Target Support Files/Pods-Accquipo/Pods-Accquipo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,17 +49,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				880B338C37998B66C55F5B81 /* Pods_Accquipo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		07B8A1242D1ADE1B07E9542C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E0352F9D7CC54BD370F6EED9 /* Pods-Accquipo.debug.xcconfig */,
+				4A2F92DDE6721A6E078EAC36 /* Pods-Accquipo.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		189124262813C58F0017F8FB = {
 			isa = PBXGroup;
 			children = (
 				189124312813C58F0017F8FB /* Accquipo */,
 				189124302813C58F0017F8FB /* Products */,
+				07B8A1242D1ADE1B07E9542C /* Pods */,
+				FC2CA3A77DAFA2F7A13C1E34 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -88,6 +105,14 @@
 			path = Accquipo;
 			sourceTree = "<group>";
 		};
+		FC2CA3A77DAFA2F7A13C1E34 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				337365F6D8F9ADE10A8E4C45 /* Pods_Accquipo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -95,9 +120,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 189124462813C5950017F8FB /* Build configuration list for PBXNativeTarget "Accquipo" */;
 			buildPhases = (
+				9B7EF28C05DDE11792040810 /* [CP] Check Pods Manifest.lock */,
 				1891242B2813C58F0017F8FB /* Sources */,
 				1891242C2813C58F0017F8FB /* Frameworks */,
 				1891242D2813C58F0017F8FB /* Resources */,
+				1E916EAA049752C61C1DF434 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -153,6 +180,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1E916EAA049752C61C1DF434 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Accquipo/Pods-Accquipo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Accquipo/Pods-Accquipo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Accquipo/Pods-Accquipo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9B7EF28C05DDE11792040810 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Accquipo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1891242B2813C58F0017F8FB /* Sources */ = {
@@ -310,6 +379,7 @@
 		};
 		189124472813C5950017F8FB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E0352F9D7CC54BD370F6EED9 /* Pods-Accquipo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -337,6 +407,7 @@
 		};
 		189124482813C5950017F8FB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A2F92DDE6721A6E078EAC36 /* Pods-Accquipo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

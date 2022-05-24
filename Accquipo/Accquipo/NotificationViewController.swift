@@ -12,6 +12,27 @@ struct NotificationModel {
     let date: String
 }
 
+class SectionBackgroundDecorationView: UICollectionReusableView {
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        configure()
+    }
+    required init?(coder: NSCoder) {
+        fatalError("not implemented")
+    }
+}
+
+extension SectionBackgroundDecorationView {
+    func configure() {
+        backgroundColor = .white
+        layer.cornerRadius = 12
+    }
+}
+
+
+
+
 
 class NotificationCollectionViewCell: UICollectionViewCell {
     @IBOutlet var contentLabel: UILabel!
@@ -40,10 +61,10 @@ extension TitleSupplementaryView {
         label.adjustsFontForContentSizeCategory = true
         let inset = CGFloat(10)
         NSLayoutConstraint.activate([
-            label.leadingAnchor.constraint(equalTo: leadingAnchor, constant: inset),
+            label.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
             label.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -inset),
             label.topAnchor.constraint(equalTo: topAnchor, constant: inset),
-            label.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -inset)
+            label.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 5)
         ])
         label.font = UIFont.preferredFont(forTextStyle: .title2)
     }
@@ -72,6 +93,7 @@ class NotificationViewController: UIViewController {
 extension NotificationViewController {
     
     func createLayout() -> UICollectionViewLayout {
+        
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
                                              heightDimension: .fractionalHeight(1.0))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
@@ -83,23 +105,27 @@ extension NotificationViewController {
         let section = NSCollectionLayoutSection(group: group)
         section.interGroupSpacing = 1
         section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
-        //
-        
-//        let sectionBackgroundDecoration = NSCollectionLayoutDecorationItem.background(
-//            elementKind: sectionBackgroundDecorationElementKind)
-//        sectionBackgroundDecoration.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
-//        section.decorationItems = [sectionBackgroundDecoration]
+     
 
         let titleSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
                                               heightDimension: .estimated(44))
         let titleSupplementary = NSCollectionLayoutBoundarySupplementaryItem(
             layoutSize: titleSize,
             elementKind: titleElementKind,
-            alignment: .top)
+            alignment: .top
+            
+        )
         section.boundarySupplementaryItems = [titleSupplementary]
         
+        let sectionBackgroundDecoration = NSCollectionLayoutDecorationItem.background(
+            elementKind: sectionBackgroundDecorationElementKind)
+        sectionBackgroundDecoration.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
+        section.decorationItems = [sectionBackgroundDecoration]
+        
         let layout = UICollectionViewCompositionalLayout(section: section)
-//        layout.register( UICollectionReusableView.self, forDecorationViewOfKind: sectionBackgroundDecorationElementKind)
+        layout.register(
+            SectionBackgroundDecorationView.self,
+            forDecorationViewOfKind: sectionBackgroundDecorationElementKind)
         return layout
     }
 }
@@ -121,6 +147,7 @@ extension NotificationViewController: UICollectionViewDataSource, UICollectionVi
         
         cell.contentLabel.text = content.content
         cell.dateLabel.text = content.date
+       
     
     return cell
 
@@ -140,6 +167,9 @@ extension NotificationViewController: UICollectionViewDataSource, UICollectionVi
             
             let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: supplementaryReuseIdentifier, for: indexPath) as! TitleSupplementaryView
             view.label.text = title
+            view.label.textColor = .gray
+            view.label.font = .boldSystemFont(ofSize: 16)
+            
             return view
         }
         
@@ -148,6 +178,7 @@ extension NotificationViewController: UICollectionViewDataSource, UICollectionVi
     }
     
 }
+
 
        
 

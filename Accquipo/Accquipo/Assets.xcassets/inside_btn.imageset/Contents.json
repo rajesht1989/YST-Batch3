@@ -5,11 +5,11 @@
       "scale" : "1x"
     },
     {
+      "filename" : "inside_btn.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "inside_btn.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
