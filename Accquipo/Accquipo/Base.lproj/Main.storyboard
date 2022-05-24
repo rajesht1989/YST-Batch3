@@ -550,6 +550,96 @@
             </objects>
             <point key="canvasLocation" x="1176.8" y="864.91754122938539"/>
         </scene>
+        <!--Half Screen View Controller-->
+        <scene sceneID="cRU-gQ-DUZ">
+            <objects>
+                <viewController storyboardIdentifier="HalfScreenViewController" id="2SW-pQ-qcQ" customClass="HalfScreenViewController" customModule="Accquipo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="I7J-aV-nQh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DHe-3U-W9A">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="idV-OJ-ndf">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="YqE-j7-gfR">
+                                            <size key="itemSize" width="375" height="112"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="NJg-Ow-Fch" customClass="HalfScreenCollectionViewCell" customModule="Accquipo" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="112"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="fxo-TC-apg">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="112"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="content" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ymC-9L-UVq">
+                                                            <rect key="frame" x="10" y="30" width="355" height="72"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="ymC-9L-UVq" secondAttribute="bottom" constant="10" id="3MZ-96-ojj"/>
+                                                        <constraint firstItem="ymC-9L-UVq" firstAttribute="leading" secondItem="fxo-TC-apg" secondAttribute="leading" constant="10" id="Mpp-bG-dwd"/>
+                                                        <constraint firstAttribute="trailing" secondItem="ymC-9L-UVq" secondAttribute="trailing" constant="10" id="NsO-IX-b4O"/>
+                                                        <constraint firstItem="ymC-9L-UVq" firstAttribute="top" secondItem="fxo-TC-apg" secondAttribute="top" constant="30" id="fgK-Zk-CSK"/>
+                                                    </constraints>
+                                                </collectionViewCellContentView>
+                                                <size key="customSize" width="375" height="112"/>
+                                                <connections>
+                                                    <outlet property="label" destination="ymC-9L-UVq" id="5fq-yG-lBt"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                        </cells>
+                                        <connections>
+                                            <outlet property="dataSource" destination="2SW-pQ-qcQ" id="PkY-SM-eWd"/>
+                                        </connections>
+                                    </collectionView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s9T-RY-9QN">
+                                        <rect key="frame" x="299.5" y="15" width="60.5" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Close"/>
+                                        <connections>
+                                            <action selector="closeAction:" destination="2SW-pQ-qcQ" eventType="touchUpInside" id="vYN-3i-izt"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="idV-OJ-ndf" secondAttribute="bottom" id="Gdj-8Q-IEQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="s9T-RY-9QN" secondAttribute="trailing" constant="15" id="IaH-mg-LDl"/>
+                                    <constraint firstItem="idV-OJ-ndf" firstAttribute="top" secondItem="DHe-3U-W9A" secondAttribute="top" id="ZeX-n2-7CH"/>
+                                    <constraint firstItem="idV-OJ-ndf" firstAttribute="leading" secondItem="DHe-3U-W9A" secondAttribute="leading" id="hcS-1j-9YA"/>
+                                    <constraint firstItem="s9T-RY-9QN" firstAttribute="top" secondItem="DHe-3U-W9A" secondAttribute="top" constant="15" id="ocH-sL-TpZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="idV-OJ-ndf" secondAttribute="trailing" id="xu1-vF-xxh"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ew3-wO-pWs"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="DHe-3U-W9A" firstAttribute="top" secondItem="ew3-wO-pWs" secondAttribute="top" id="3d7-Ue-GIs"/>
+                            <constraint firstItem="ew3-wO-pWs" firstAttribute="bottom" secondItem="DHe-3U-W9A" secondAttribute="bottom" id="TMP-TP-vO0"/>
+                            <constraint firstItem="ew3-wO-pWs" firstAttribute="trailing" secondItem="DHe-3U-W9A" secondAttribute="trailing" id="ZOv-XK-i8O"/>
+                            <constraint firstItem="DHe-3U-W9A" firstAttribute="leading" secondItem="ew3-wO-pWs" secondAttribute="leading" id="rF4-Gc-uxc"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="BzY-Bg-TY4"/>
+                    <connections>
+                        <outlet property="collectionView" destination="idV-OJ-ndf" id="J5s-gl-CwP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kKr-zl-mt0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5.5999999999999996" y="1593.5532233883059"/>
+        </scene>
         <!--Home-->
         <scene sceneID="E93-XM-FbS">
             <objects>
@@ -702,6 +792,9 @@
                                 <rect key="frame" x="283" y="544" width="80" height="62"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="plus_btn"/>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="oWA-lT-dDx" eventType="touchUpInside" id="fgR-Ls-zuS"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hfN-2c-WHW"/>

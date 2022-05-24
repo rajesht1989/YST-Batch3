@@ -14,7 +14,7 @@ private let  graphCellreuseIdentifier = "graphCell"
 class GridCollectionViewCell:UICollectionViewCell{
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var itemLabel: UILabel!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         layer.cornerRadius = 10
@@ -31,65 +31,19 @@ class GraphCell: UICollectionViewCell {
             chartView.dragEnabled = true
             chartView.setScaleEnabled(false)
             chartView.pinchZoomEnabled = true
-          
-//            let llXAxis = ChartLimitLine(limit: 10, label: "Index 10")
-//            llXAxis.lineWidth = 4
-//           // llXAxis.lineDashLengths = [0, 0, 0]
-//            llXAxis.labelPosition = .rightBottom
-//            llXAxis.valueFont = .systemFont(ofSize: 10)
-
-          //  chartView.xAxis.gridLineDashLengths = [10, 10]
-           // chartView.xAxis.gridLineDashPhase = 0
-
-          //  let ll1 = ChartLimitLine(limit: 150, label: "Upper Limit")
-//            let leftAxis = chartView.leftAxis
-         //   leftAxis.removeAllLimitLines()
-           // leftAxis.addLimitLine(ll1)
-            //leftAxis.addLimitLine(ll2)
-          //  leftAxis.axisMaximum = 200
-           // leftAxis.axisMinimum = -50
-            //leftAxis.gridLineDashLengths = [5, 5]
-            //leftAxis.drawLimitLinesBehindDataEnabled = true
-
             chartView.rightAxis.enabled = false
-
-//            [chartView.viewPortHandler setMaximumScaleY: 2.f];
-//            [chartView.viewPortHandler setMaximumScaleX: 2.f];
-
-//            let marker = BalloonMarker(color: UIColor(white: 180/255, alpha: 1),
-//                                       font: .systemFont(ofSize: 12),
-//                                       textColor: .white,
-//                                       insets: UIEdgeInsets(top: 8, left: 8, bottom: 20, right: 8))
-//            marker.chartView = chartView
-//            marker.minimumSize = CGSize(width: 80, height: 40)
-//            chartView.marker = marker
-//
-//            chartView.legend.form = .line
-//
-//            sliderX.value = 45
-//            sliderY.value = 100
-//            slidersValueChanged(nil)
-
             chartView.xAxis.drawGridLinesEnabled = false
             chartView.leftAxis.drawGridLinesEnabled = false
             chartView.rightAxis.drawGridLinesEnabled = false
             chartView.animate(yAxisDuration: 0.5)
-
-//            chartView..drawGridLinesEnabled = false
-            
         }
-        
     }
-
 }
 
 extension GraphCell: ChartViewDelegate {
     
      func updateChartData() {
-//        if self.shouldHideData {
-//            chartView.data = nil
-//            return
-//        }
+
 
         self.setDataCount(13, range: 200)
     }
@@ -121,21 +75,14 @@ extension GraphCell: ChartViewDelegate {
 
     private func setup(_ dataSet: LineChartDataSet) {
         if dataSet.isDrawLineWithGradientEnabled {
-            //dataSet.lineDashLengths = nil
-           // dataSet.highlightLineDashLengths = nil
-            //dataSet.setColors(.black, .red, .white)
             dataSet.setCircleColor(.black)
-           // dataSet.gradientPositions = [0, 40, 100]
             dataSet.lineWidth = 1
             dataSet.circleRadius = 3
             dataSet.drawCircleHoleEnabled = false
             dataSet.valueFont = .systemFont(ofSize: 9)
             dataSet.formLineDashLengths = nil
             dataSet.formLineWidth = 1
-           // dataSet.formSize = 15
         } else {
-           // dataSet.lineDashLengths = [5, 2.5]
-           // dataSet.highlightLineDashLengths = [0, 0.1]
             dataSet.setColor(.blue)
             dataSet.setCircleColor(.blue)
             dataSet.gradientPositions = nil
@@ -143,14 +90,12 @@ extension GraphCell: ChartViewDelegate {
             dataSet.circleRadius = 3
             dataSet.drawCircleHoleEnabled = false
             dataSet.valueFont = .systemFont(ofSize: 9)
-           // dataSet.formLineDashLengths = [0, 0.1]
             dataSet.formLineWidth = 0.5
-            //dataSet.formSize = 15
         }
     }
 }
 
-class GridCollectionViewController: UIViewController {
+class GridCollectionViewController: UIViewController, UIViewControllerTransitioningDelegate {
     
     @IBOutlet var collectionView: UICollectionView!
     
@@ -161,6 +106,20 @@ class GridCollectionViewController: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: false)
     }
 
+    @IBAction func buttonTapped(_ sender: Any) {
+        let controller = storyboard?.instantiateViewController(withIdentifier: "HalfScreenViewController") as! HalfScreenViewController
+        controller.modalPresentationStyle = .custom
+        controller.transitioningDelegate = self
+        present(controller, animated: true) {
+            controller.view.backgroundColor = .red
+        }
+    }
+    
+    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+        
+        
+        return HalfSizePresentationController(presentedViewController: presented, presenting: presentingViewController)
+    }
 }
 
 extension GridCollectionViewController: UICollectionViewDataSource{
@@ -277,4 +236,10 @@ extension GridCollectionViewController {
     }
 }
 
+class HalfSizePresentationController: UIPresentationController {
+    override var frameOfPresentedViewInContainerView: CGRect {
+        guard let bounds = containerView?.bounds else { return .zero }
+        return CGRect(x: 0, y: (bounds.height / 2) + 20, width: bounds.width, height: bounds.height / 2)
+    }
+}
 
