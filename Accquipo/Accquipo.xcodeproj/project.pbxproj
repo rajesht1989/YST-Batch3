@@ -12,6 +12,12 @@
 		1862A88F2824049F00CA9BDF /* CashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1862A88E2824049F00CA9BDF /* CashViewController.swift */; };
 		18715217281A5FFE00A870CC /* GridCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18715216281A5FFE00A870CC /* GridCollectionViewController.swift */; };
 		187324E5282A666000E91C06 /* ProfileCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187324E4282A666000E91C06 /* ProfileCollectionViewController.swift */; };
+		187499E3283E22E70039DEB3 /* PurchaseLedgerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187499E2283E22E70039DEB3 /* PurchaseLedgerViewController.swift */; };
+		187499E5283F45080039DEB3 /* LaylandStoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187499E4283F45080039DEB3 /* LaylandStoresViewController.swift */; };
+		187499E7284491920039DEB3 /* SalesLedgerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187499E6284491920039DEB3 /* SalesLedgerViewController.swift */; };
+		187499E928449F900039DEB3 /* LysonMartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187499E828449F900039DEB3 /* LysonMartViewController.swift */; };
+		187499EE2844BEFE0039DEB3 /* BrokerLedgerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187499ED2844BEFE0039DEB3 /* BrokerLedgerViewController.swift */; };
+		187499F02845D2500039DEB3 /* StockLedgerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187499EF2845D2500039DEB3 /* StockLedgerViewController.swift */; };
 		188997D628239F4B00E19478 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188997D528239F4B00E19478 /* NotificationViewController.swift */; };
 		189124332813C58F0017F8FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189124322813C58F0017F8FB /* AppDelegate.swift */; };
 		189124352813C58F0017F8FB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189124342813C58F0017F8FB /* SceneDelegate.swift */; };
@@ -30,6 +36,12 @@
 		1862A88E2824049F00CA9BDF /* CashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashViewController.swift; sourceTree = "<group>"; };
 		18715216281A5FFE00A870CC /* GridCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCollectionViewController.swift; sourceTree = "<group>"; };
 		187324E4282A666000E91C06 /* ProfileCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewController.swift; sourceTree = "<group>"; };
+		187499E2283E22E70039DEB3 /* PurchaseLedgerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseLedgerViewController.swift; sourceTree = "<group>"; };
+		187499E4283F45080039DEB3 /* LaylandStoresViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaylandStoresViewController.swift; sourceTree = "<group>"; };
+		187499E6284491920039DEB3 /* SalesLedgerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesLedgerViewController.swift; sourceTree = "<group>"; };
+		187499E828449F900039DEB3 /* LysonMartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LysonMartViewController.swift; sourceTree = "<group>"; };
+		187499ED2844BEFE0039DEB3 /* BrokerLedgerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrokerLedgerViewController.swift; sourceTree = "<group>"; };
+		187499EF2845D2500039DEB3 /* StockLedgerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockLedgerViewController.swift; sourceTree = "<group>"; };
 		188997D528239F4B00E19478 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		1891242F2813C58F0017F8FB /* Accquipo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Accquipo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		189124322813C58F0017F8FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +102,8 @@
 			children = (
 				189124322813C58F0017F8FB /* AppDelegate.swift */,
 				189124492813DCBC0017F8FB /* Main.storyboard */,
+				187499E4283F45080039DEB3 /* LaylandStoresViewController.swift */,
+				187499EF2845D2500039DEB3 /* StockLedgerViewController.swift */,
 				187324E4282A666000E91C06 /* ProfileCollectionViewController.swift */,
 				189124362813C58F0017F8FB /* LoginViewController.swift */,
 				18715216281A5FFE00A870CC /* GridCollectionViewController.swift */,
@@ -98,6 +112,10 @@
 				1862A88C2824047700CA9BDF /* BankViewController.swift */,
 				1862A88E2824049F00CA9BDF /* CashViewController.swift */,
 				188997D528239F4B00E19478 /* NotificationViewController.swift */,
+				187499E2283E22E70039DEB3 /* PurchaseLedgerViewController.swift */,
+				187499E6284491920039DEB3 /* SalesLedgerViewController.swift */,
+				187499E828449F900039DEB3 /* LysonMartViewController.swift */,
+				187499ED2844BEFE0039DEB3 /* BrokerLedgerViewController.swift */,
 				189124342813C58F0017F8FB /* SceneDelegate.swift */,
 				1891243E2813C5950017F8FB /* Assets.xcassets */,
 				189124402813C5950017F8FB /* LaunchScreen.storyboard */,
@@ -231,12 +249,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				188997D628239F4B00E19478 /* NotificationViewController.swift in Sources */,
+				187499E928449F900039DEB3 /* LysonMartViewController.swift in Sources */,
 				189124372813C58F0017F8FB /* LoginViewController.swift in Sources */,
+				187499E3283E22E70039DEB3 /* PurchaseLedgerViewController.swift in Sources */,
+				187499EE2844BEFE0039DEB3 /* BrokerLedgerViewController.swift in Sources */,
 				189124332813C58F0017F8FB /* AppDelegate.swift in Sources */,
 				1862A88F2824049F00CA9BDF /* CashViewController.swift in Sources */,
 				1891243D2813C58F0017F8FB /* Accquipo.xcdatamodeld in Sources */,
 				1862A88D2824047700CA9BDF /* BankViewController.swift in Sources */,
 				18DE71AD283D017F00FFAFEC /* HalfScreenViewController.swift in Sources */,
+				187499E7284491920039DEB3 /* SalesLedgerViewController.swift in Sources */,
+				187499F02845D2500039DEB3 /* StockLedgerViewController.swift in Sources */,
+				187499E5283F45080039DEB3 /* LaylandStoresViewController.swift in Sources */,
 				18715217281A5FFE00A870CC /* GridCollectionViewController.swift in Sources */,
 				189124352813C58F0017F8FB /* SceneDelegate.swift in Sources */,
 				187324E5282A666000E91C06 /* ProfileCollectionViewController.swift in Sources */,

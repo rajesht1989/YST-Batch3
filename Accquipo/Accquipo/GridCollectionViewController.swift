@@ -143,7 +143,7 @@ extension GridCollectionViewController: UICollectionViewDataSource{
         switch indexPath.section {
         case 0:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! GridCollectionViewCell
-            switch indexPath.row {
+            switch indexPath.item {
             case 0:
                 cell.imageView.image = UIImage(named: "purchase")
                 cell.itemLabel.text = "Purchase Ledger Account"
@@ -169,6 +169,28 @@ extension GridCollectionViewController: UICollectionViewDataSource{
         
     }
 }
+
+extension GridCollectionViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switch indexPath.section {
+        case 0:
+            switch indexPath.item {
+            case 0:
+                navigationController?.pushViewController(storyboard!.instantiateViewController(withIdentifier: "PurchaseLedgerViewController"), animated: true)
+            case 1:
+                navigationController?.pushViewController(storyboard!.instantiateViewController(withIdentifier: "SalesLedgerViewController"), animated: true)
+            case 2:
+                navigationController?.pushViewController(storyboard!.instantiateViewController(withIdentifier: "StockLedgerViewController"), animated: true)
+            case 3:
+                navigationController?.pushViewController(storyboard!.instantiateViewController(withIdentifier: "BrokerLedgerViewController"), animated: true)
+                
+            default:break
+            }
+        default:break
+        }
+    }
+}
+
 extension GridCollectionViewController {
     func createLayout() -> UICollectionViewLayout {
         
