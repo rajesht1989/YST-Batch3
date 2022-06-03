@@ -43,7 +43,7 @@ extension BrokerLedgerViewController: UICollectionViewDelegate {
         case 0:
             switch indexPath.item {
             case 0:
-                navigationController?.pushViewController(storyboard!.instantiateViewController(withIdentifier: ""), animated: true)
+                navigationController?.pushViewController(storyboard!.instantiateViewController(withIdentifier: "BrokerDetailsViewController"), animated: true)
             default:break
             }
         default:break

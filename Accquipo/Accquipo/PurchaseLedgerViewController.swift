@@ -20,13 +20,18 @@ class PurchaseCollectionViewCell : UICollectionViewCell{
     
 }
 
-class PurchaseLedgerViewController: UIViewController {
+class PurchaseLedgerViewController: UIViewController,UIViewControllerTransitioningDelegate{
     
     private let reuseIdentifier = "Cell"
     private let supplementaryReuseIdentifier = "supplementaryView"
     private let sectionBackgroundDecorationElementKind = "section-background-element-kind"
     private let titleElementKind = "title-element-kind"
     
+    @IBAction func buttonTapped(_ sender: Any) {
+        
+        let controller = storyboard?.instantiateViewController(withIdentifier: "PurchaseDealerAccountViewController") as! PurchaseDealerAccountViewController
+        navigationController?.pushViewController(controller, animated: true)
+    }
     
     @IBOutlet var collectionView: UICollectionView!
     

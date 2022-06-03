@@ -33,10 +33,11 @@ class StockLedgerViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "LysonMart Stores"
+        navigationItem.title = "Stock Account"
         collectionView.collectionViewLayout = createLayout()
         collectionView.register(TitleSupplementaryView.self, forSupplementaryViewOfKind: titleElementKind, withReuseIdentifier: supplementaryReuseIdentifier)
-
+        collectionView.layer.cornerRadius = 20
+        collectionView.clipsToBounds = true
                
     }
     
@@ -46,34 +47,47 @@ extension StockLedgerViewController {
     
     func createLayout() -> UICollectionViewLayout {
         
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-                                             heightDimension: .fractionalHeight(1.0))
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-                                              heightDimension: .estimated(100))
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
-
-        let section = NSCollectionLayoutSection(group: group)
-        section.interGroupSpacing = 1
-        section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
-     
-
         
-        let sectionBackgroundDecoration = NSCollectionLayoutDecorationItem.background(
-            elementKind: sectionBackgroundDecorationElementKind)
-        sectionBackgroundDecoration.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
-        section.decorationItems = [sectionBackgroundDecoration]
         
-        let layout = UICollectionViewCompositionalLayout(section: section)
-        layout.register(
-            SectionBackgroundDecorationView.self,
-            forDecorationViewOfKind: sectionBackgroundDecorationElementKind)
+            let layout = UICollectionViewCompositionalLayout { (sectionIndex: Int,
+            layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
+                
+                let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                                     heightDimension: .fractionalHeight(1.0))
+                let item = NSCollectionLayoutItem(layoutSize: itemSize)
+
+                let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                                      heightDimension: .estimated(100))
+                let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+
+                let section = NSCollectionLayoutSection(group: group)
+                section.interGroupSpacing = 1
+                section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
+             
+                if sectionIndex == 0 {
+                    
+                
+                let titleSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                                      heightDimension: .estimated(44))
+                let titleSupplementary = NSCollectionLayoutBoundarySupplementaryItem(
+                    layoutSize: titleSize,
+                    elementKind: self.titleElementKind,
+                    alignment: .top )
+                
+                section.boundarySupplementaryItems = [titleSupplementary]
+                }
+              return section
+            
+            
+        }
         return layout
+        
     }
+    
+    
 }
 
-extension StockLedgerViewController: UICollectionViewDataSource {
+extension StockLedgerViewController: UICollectionViewDataSource ,UICollectionViewDelegate{
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         data.count
     }
@@ -91,29 +105,36 @@ extension StockLedgerViewController: UICollectionViewDataSource {
         cell.nameLabel.text = content.name
         cell.codeLabel.text = content.code
         cell.percentageLabel.text = content.percentage
-        
-        
-        
+    
     return cell
-
-
 }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switch indexPath.section {
+        case 0:
+            switch indexPath.item {
+            case 0:
+                navigationController?.pushViewController(storyboard!.instantiateViewController(withIdentifier: "StockProductDetailsViewController"), animated: true)
+            default:break
+            }
+        default:break
+        }
+    }
+
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         if kind == titleElementKind {
-            let title = "Customers"
-            
-            
+            let title = "Products"
             let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: supplementaryReuseIdentifier, for: indexPath) as! TitleSupplementaryView
             view.label.text = title
-            view.label.textColor = .gray
+            view.label.textColor = .black
             view.label.font = .boldSystemFont(ofSize: 16)
             
             return view
         }
-        
-        
         return UICollectionReusableView()
     }
     
 
-}
+      
+    }
+
+
