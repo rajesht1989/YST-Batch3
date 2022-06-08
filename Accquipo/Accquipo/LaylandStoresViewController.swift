@@ -37,7 +37,7 @@ class LaylandStoresViewController: UIViewController {
     
     @IBOutlet var collectionView : UICollectionView!
     
-    var data = [LaylandModel(bill: "Fresh Flavour", time: "May 23 4:46 PM", cost: 7808.00, isCleared: false),LaylandModel(bill: "Easy Mart", time: "May 05 2:07 PM", cost: 500.00, isCleared: true),LaylandModel(bill: "K.S and Sons", time: "April 18 7:46 AM", cost: 3000.00, isCleared: false),LaylandModel(bill: "Easy Mart", time: "April 11 3:28 PM", cost: 62.00, isCleared: false),LaylandModel(bill: "KJ Lyson", time: "May 23 4:46 PM", cost: 7808.00, isCleared: false),LaylandModel(bill: "Lyson Mart", time: "May 23 4:46 PM", cost: 500.0, isCleared: true),LaylandModel(bill: "Easy Mart", time: "Feb 23 4:46 PM", cost: 3000.00, isCleared: false),LaylandModel(bill: "Arizon Supermarket", time: "Feb 14 1:00 PM", cost: 62.00, isCleared: false),LaylandModel(bill: "Fresh Flavour", time: "Feb 10 3:11 PM", cost: 7808.00, isCleared: false),LaylandModel(bill: "Fresh Flavour", time: "Feb 3 6:33 PM", cost: 500.00, isCleared: true),LaylandModel(bill: "Easy Mart", time: "Jan 29 4:23 PM", cost: 3000.00, isCleared: false)]
+    var data = [LaylandModel(bill: "B No. 1357", time: "May 23 4:46 PM", cost: 7808.00, isCleared: false),LaylandModel(bill: "B No. 1467", time: "May 05 2:07 PM", cost: 500.00, isCleared: true),LaylandModel(bill: "B No. 1139", time: "April 18 7:46 AM", cost: 3000.00, isCleared: false),LaylandModel(bill: " B No. 1107", time: "April 11 3:28 PM", cost: 62.00, isCleared: false),LaylandModel(bill: " B No. 997", time: "May 23 4:46 PM", cost: 7808.00, isCleared: false),LaylandModel(bill: "B No. 901 ", time: "May 23 4:46 PM", cost: 500.0, isCleared: true),LaylandModel(bill: "B No. 956 ", time: "Feb 23 4:46 PM", cost: 3000.00, isCleared: false),LaylandModel(bill: "B No. 651 ", time: "Feb 14 1:00 PM", cost: 62.00, isCleared: false),LaylandModel(bill: "B No. 607 ", time: "Feb 10 3:11 PM", cost: 7808.00, isCleared: false),LaylandModel(bill: "B No. 586", time: "Feb 3 6:33 PM", cost: 500.00, isCleared: true),LaylandModel(bill: "B No. 521 ", time: "Jan 29 4:23 PM", cost: 3000.00, isCleared: false)]
     
     
     
@@ -62,7 +62,7 @@ extension LaylandStoresViewController {
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
 
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-                                              heightDimension: .estimated(100))
+                                              heightDimension: .estimated(120))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
 
         let section = NSCollectionLayoutSection(group: group)
@@ -146,5 +146,16 @@ extension LaylandStoresViewController: UICollectionViewDataSource, UICollectionV
 
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switch indexPath.section {
+        case 0:
+            switch indexPath.item {
+            case 0:
+                navigationController?.pushViewController(storyboard!.instantiateViewController(withIdentifier: "LaylandBillViewController"), animated: true)
+            default:break
+            }
+        default:break
+        }
+    }
 }
 

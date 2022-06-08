@@ -182,7 +182,7 @@ extension BrokerDetailsViewController {
                 let cell = NSCollectionLayoutGroup.horizontal(layoutSize: cellSize, subitem: item, count: 1)
                 
                 let spacing = CGFloat(10)
-                
+            
                 cell.interItemSpacing = .fixed(spacing)
             
                 

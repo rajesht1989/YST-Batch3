@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Charts
+
 struct StockModel {
     let name: String
     let code: String
@@ -17,16 +19,29 @@ class StockCollectionViewCell : UICollectionViewCell{
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var codeLabel: UILabel!
     @IBOutlet var percentageLabel: UILabel!
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        layer.cornerRadius = 10
+        clipsToBounds = true
+    }
 }
 
 
-class StockLedgerViewController: UIViewController {
+class StockLedgerViewController: UIViewController, ChartViewDelegate {
     private let reuseIdentifier = "Cell"
     private let supplementaryReuseIdentifier = "supplementaryView"
     private let sectionBackgroundDecorationElementKind = "section-background-element-kind"
     private let titleElementKind = "title-element-kind"
     
+    @IBOutlet var chartView: PieChartView!
+
     @IBOutlet var collectionView: UICollectionView!
+    
+    let parties = ["Party A", "Party B", "Party C", "Party D", "Party E", "Party F",
+                   "Party G", "Party H", "Party I", "Party J", "Party K", "Party L",
+                   "Party M", "Party N", "Party O", "Party P", "Party Q", "Party R",
+                   "Party S", "Party T", "Party U", "Party V", "Party W", "Party X",
+                   "Party Y", "Party Z"]
     
     let data = [[StockModel(name: "Walnut", code: "HSN code 8023100",percentage:"% 18.00")],[StockModel(name: "Lensils Powder ", code: "HSN code 07134000",percentage:"% 1.78")],[StockModel(name: "Dry Dates", code: "HSN code 0841010 ",percentage: "% 18.00")],[StockModel(name: "Cardamom oleoresin", code: "HSN code 33012922",percentage: " % 12.00")],[StockModel(name: "Coriander Powder", code: "HSN code 0862",percentage: "% 8.69")],[StockModel(name: "Walnut", code: "HSN code 8023100",percentage: "% 15.00")],[StockModel(name: "Cardamom oleoresin", code: "HSN code 07134000 ",percentage: " % 3.57")],[StockModel(name: "Lensils Powder", code: "HSN code 0841010",percentage: "% 11.90")]]
 
@@ -39,6 +54,72 @@ class StockLedgerViewController: UIViewController {
         collectionView.layer.cornerRadius = 20
         collectionView.clipsToBounds = true
                
+        chartView.delegate = self
+        
+        chartView.holeColor = .clear
+        chartView.transparentCircleColor = NSUIColor.white.withAlphaComponent(0.43)
+        chartView.holeRadiusPercent = 0.95
+        chartView.rotationEnabled = false
+        chartView.highlightPerTapEnabled = true
+        chartView.drawEntryLabelsEnabled = false
+
+        chartView.maxAngle = 180 // Half chart
+        chartView.rotationAngle = 180 // Rotate to make the half on the upper side
+        chartView.centerTextOffset = CGPoint(x: 0, y: -20)
+        let l = chartView.legend
+        l.horizontalAlignment = .center
+        l.verticalAlignment = .top
+        l.orientation = .horizontal
+        l.drawInside = false
+        l.xEntrySpace = 10
+        l.yEntrySpace = 0
+        l.yOffset = 0
+//        chartView.legend = l
+
+        // entry label styling
+        chartView.entryLabelColor = .white
+        
+        self.updateChartData()
+        
+        chartView.animate(xAxisDuration: 0.25, easingOption: .easeOutBack)
+    }
+    
+    func updateChartData() {
+        
+        self.setDataCount(7, range: 100)
+    }
+
+    func setDataCount(_ count: Int, range: UInt32) {
+        let entries = (0..<count).map { (i) -> PieChartDataEntry in
+            // IMPORTANT: In a PieChart, no values (Entry) should have the same xIndex (even if from different DataSets), since no values can be drawn above each other.
+            return PieChartDataEntry(value: Double(arc4random_uniform(range) + range / 5),
+                                     label: parties[i % parties.count])
+        }
+        
+        let set = PieChartDataSet(entries: entries, label: "Election Results")
+        set.sliceSpace = 1
+        set.selectionShift = 5
+        set.colors = [ NSUIColor(red: 46/255.0, green: 204/255.0, blue: 113/255.0, alpha: 1.0),
+                       NSUIColor(red: 241/255.0, green: 196/255.0, blue: 15/255.0, alpha: 1.0),
+                       NSUIColor(red: 231/255.0, green: 76/255.0, blue: 60/255.0, alpha: 1.0),
+                       NSUIColor(red: 52/255.0, green: 152/255.0, blue: 219/255.0, alpha: 1.0)]
+        set.drawValuesEnabled = false
+
+        let data = PieChartData(dataSet: set)
+        
+        let pFormatter = NumberFormatter()
+        pFormatter.numberStyle = .percent
+        pFormatter.maximumFractionDigits = 1
+        pFormatter.multiplier = 1
+        pFormatter.percentSymbol = " %"
+        data.setValueFormatter(DefaultValueFormatter(formatter: pFormatter))
+    
+//        data.setValueFont(UIFont(name: "HelveticaNeue-Light", size: 11)!)
+//        data.setValueTextColor(.white)
+        
+        chartView.data = data
+        
+        chartView.setNeedsDisplay()
     }
     
 
@@ -136,5 +217,4 @@ extension StockLedgerViewController: UICollectionViewDataSource ,UICollectionVie
 
       
     }
-
 

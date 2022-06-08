@@ -40,6 +40,7 @@ class GraphCell: UICollectionViewCell {
     }
 }
 
+
 extension GraphCell: ChartViewDelegate {
     
      func updateChartData() {
@@ -183,9 +184,11 @@ extension GridCollectionViewController: UICollectionViewDelegate {
                 navigationController?.pushViewController(storyboard!.instantiateViewController(withIdentifier: "StockLedgerViewController"), animated: true)
             case 3:
                 navigationController?.pushViewController(storyboard!.instantiateViewController(withIdentifier: "BrokerLedgerViewController"), animated: true)
-                
             default:break
             }
+        case 1:
+            navigationController?.pushViewController(storyboard!.instantiateViewController(withIdentifier: "ProfileDashboardViewController"), animated: true)
+            
         default:break
         }
     }
@@ -250,8 +253,6 @@ extension GridCollectionViewController {
                 default :
                   return gridSection()
             }
-            
-            
         }
         return layout
         
