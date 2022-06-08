@@ -67,7 +67,7 @@ extension HalfScreenViewController {
     }
 }
 
-extension HalfScreenViewController: UICollectionViewDataSource {
+extension HalfScreenViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         1
@@ -78,7 +78,8 @@ extension HalfScreenViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)as! HalfScreenCollectionViewCell
+       
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: indexPath.item == 0 ? "Cell1" : "Cell", for: indexPath)as! HalfScreenCollectionViewCell
         
         
         let content = data[indexPath.item]
@@ -87,5 +88,6 @@ extension HalfScreenViewController: UICollectionViewDataSource {
        
         return cell
     }
+    
 }
 

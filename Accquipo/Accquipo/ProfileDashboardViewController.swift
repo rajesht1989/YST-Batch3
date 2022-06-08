@@ -5,25 +5,54 @@
 //  Created by apple on 01/06/22.
 //
 
-
 import UIKit
-
 import Charts
+class MonthCollectionViewCell : UICollectionViewCell{
+    
+    @IBOutlet var monthLabel: UILabel!
+}
 
 class ProfileDashboardViewController: UIViewController,ChartViewDelegate{
+    
+    private let reuseIdentifier = "Cell"
+    
+    @IBOutlet var collectionView: UICollectionView!
+    
+    let data = ["Jan", "Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
+
+    
+    
     @IBOutlet var chartView: BarChartView!
     
-    
+    @IBOutlet var profitView: UIView!
+    @IBOutlet var purchaseView : UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        collectionView.collectionViewLayout = createLayout()
+        
+        self.title = "Bar Chart"
+        purchaseView.clipsToBounds = true
+        purchaseView.layer.cornerRadius = 10
+
+        
+        profitView.clipsToBounds = true
+        profitView.layer.cornerRadius = 10
+        chartView.clipsToBounds = true
+        chartView.layer.cornerRadius = 10
         chartView.delegate = self
         
         chartView.drawBarShadowEnabled = false
         chartView.drawValueAboveBarEnabled = false
-        
-        chartView.maxVisibleCount = 60
-        
+        chartView.backgroundColor = .white
+        chartView.maxVisibleCount = 20
+        chartView.xAxis.drawGridLinesEnabled = false
+        chartView.rightAxis.drawLabelsEnabled = false
+//        chartView.leftAxis.drawGridLinesEnabled = false
+//        chartView.rightAxis.drawGridLinesEnabled = false
+
+    
         let xAxis = chartView.xAxis
         xAxis.labelPosition = .bottom
         xAxis.labelFont = .systemFont(ofSize: 10)
@@ -34,8 +63,8 @@ class ProfileDashboardViewController: UIViewController,ChartViewDelegate{
         let leftAxisFormatter = NumberFormatter()
         leftAxisFormatter.minimumFractionDigits = 0
         leftAxisFormatter.maximumFractionDigits = 1
-        leftAxisFormatter.negativeSuffix = " $"
-        leftAxisFormatter.positiveSuffix = " $"
+        leftAxisFormatter.negativeSuffix = " K"
+        leftAxisFormatter.positiveSuffix = " K"
         
         let leftAxis = chartView.leftAxis
         leftAxis.labelFont = .systemFont(ofSize: 10)
@@ -60,27 +89,40 @@ class ProfileDashboardViewController: UIViewController,ChartViewDelegate{
         l.drawInside = false
         l.form = .circle
         l.formSize = 9
-        l.font = UIFont(name: "HelveticaNeue-Light", size: 11)!
+//        l.font = UIFont(name: "HelveticaNeue-Light", size: 11)!
         l.xEntrySpace = 4
 //        chartView.legend = l
 
-        
+        self.updateChartData()
+
       
   
     }
+    
+    func updateChartData() {
+     
+        self.setDataCount(3, range: UInt32(70))
+    }
+    
 
     func setDataCount(_ count: Int, range: UInt32) {
         let start = 1
         
-        let yVals = (start..<start+count+1).map { (i) -> BarChartDataEntry in
+        var yVals = (start..<start+count+1).map { (i) -> BarChartDataEntry in
             let mult = range + 1
             let val = Double(arc4random_uniform(mult))
-            if arc4random_uniform(100) < 25 {
-                return BarChartDataEntry(x: Double(i), y: val, icon: UIImage(named: "icon"))
-            } else {
-                return BarChartDataEntry(x: Double(i), y: val)
-            }
+            
+            return BarChartDataEntry(x: i % 2 == 0 ? Double(i) - 0.8 : Double(i), y: val)
         }
+        
+        let yVals1 = (start..<start+count+1).map { (i) -> BarChartDataEntry in
+            let mult = range + 1
+            let val = Double(arc4random_uniform(mult))
+            
+            return BarChartDataEntry(x: i % 2 != 0 ? Double(i) - 0.8 : Double(i), y: val)
+        }
+        
+        yVals.append(contentsOf: yVals1)
         
         var set1: BarChartDataSet! = nil
         if let set = chartView.data?.first as? BarChartDataSet {
@@ -89,25 +131,68 @@ class ProfileDashboardViewController: UIViewController,ChartViewDelegate{
             chartView.data?.notifyDataChanged()
             chartView.notifyDataSetChanged()
         } else {
-            set1 = BarChartDataSet(entries: yVals, label: "The year 2017")
-            set1.colors = ChartColorTemplates.material()
+            set1 = BarChartDataSet(entries: yVals, label: "")
+            set1.colors = liberty()// ChartColorTemplates.material()
             set1.drawValuesEnabled = false
             
             let data = BarChartData(dataSet: set1)
-            data.setValueFont(UIFont(name: "HelveticaNeue-Light", size: 10)!)
-            data.barWidth = 0.9
+            //data.setValueFont(UIFont(name: "HelveticaNeue-Light", size: 10)!)
+            data.barWidth = 0.1
             chartView.data = data
         }
         
-//        chartView.setNeedsDisplay()
+        func liberty () -> [NSUIColor]
+        {
+            return [
+                NSUIColor(red: 83/255.0, green: 123/255.0, blue: 255/255.0, alpha: 1.0),
+                NSUIColor(red: 59/255.0, green: 73/255.0, blue: 174/255.0, alpha: 1.0),
+            ]
+        }
+
     }
     
-   
+    }
+
+extension ProfileDashboardViewController {
     
-    // MARK: - Actions
- 
+    func createLayout() -> UICollectionViewLayout {
         
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                             heightDimension: .fractionalHeight(1.0))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
 
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                              heightDimension: .fractionalHeight(1))
+        
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 12)
+        let section = NSCollectionLayoutSection(group: group)
+        section.interGroupSpacing = 1
+//        section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
+     
+ let layout = UICollectionViewCompositionalLayout(section: section)
+        return layout
     }
+}
+
+extension ProfileDashboardViewController: UICollectionViewDataSource {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        data.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+
+    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! MonthCollectionViewCell
+        
+        cell.monthLabel.text = data[indexPath.item]
+
+        
+        
+    return cell
 
 
+}
+}
